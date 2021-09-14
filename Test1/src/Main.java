@@ -1,4 +1,4 @@
-package Test1;
+package Test1.src;
 
 public class Main{
 
