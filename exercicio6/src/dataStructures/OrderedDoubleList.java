@@ -112,16 +112,16 @@ public class OrderedDoubleList<K extends Comparable<K>,V> implements OrderedDict
 
     @Override
     public Iterator<Entry<K, V>> iterator() {
-        return null;
+        return new DoubleListIterator<>(head,tail);
     }
 
     @Override
     public Entry minEntry() throws EmptyDictionaryException {
-        return null;
+        return head.getElement();
     }
 
     @Override
     public Entry maxEntry() throws EmptyDictionaryException {
-        return null;
+        return tail.getElement();
     }
 }
