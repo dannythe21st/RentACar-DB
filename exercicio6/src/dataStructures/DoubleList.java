@@ -308,7 +308,6 @@ public class DoubleList<E> implements List<E>
     {
         if ( position < 0 || position > currentSize )
             throw new dataStructures.Dictionary_Entry.InvalidPositionException();
-
         if ( position == 0 )
             this.addFirst(element);
         else if ( position == currentSize )
