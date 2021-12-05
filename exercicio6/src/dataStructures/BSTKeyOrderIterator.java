@@ -21,14 +21,23 @@ public class BSTKeyOrderIterator<K,V> implements BSTIterator{
     @Override
     public BSTNode<K,V> next() {
         BSTNode<K,V> e = stack.pop();
-        stack.push(allLeft(node));
-        stack.push(stepRight(allLeft(node)));
+        stack.push(runBranch(nextToReturn));
         return e;
     }
 
     @Override
     public void rewind() {
         nextToReturn = node;
+    }
+
+    private BSTNode<K,V> runBranch(BSTNode<K,V> node){
+        BSTNode<K,V> newNode = node;
+        while(!newNode.isLeaf()){
+            newNode = allLeft(node);
+            if (newNode.getRight() != null)
+                newNode = stepRight(node);
+        }
+        return newNode;
     }
 
     private BSTNode<K,V> allLeft(BSTNode<K,V> node){
@@ -43,4 +52,5 @@ public class BSTKeyOrderIterator<K,V> implements BSTIterator{
         newNode = newNode.getRight();
         return newNode;
     }
+
 }
