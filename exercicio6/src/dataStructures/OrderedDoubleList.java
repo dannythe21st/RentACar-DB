@@ -119,10 +119,11 @@ public class OrderedDoubleList<K extends Comparable<K>,V> implements OrderedDict
         }*/
         DoubleList.DoubleListNode<Entry<K,V>> node = head;
         Entry e = new EntryClass(key, value);
+        currentSize++;
         while(node.getElement().getKey().compareTo(key) < 0)
             node = node.getNext();
         if (node.getElement().getKey().compareTo(key) == 0){
-            if (node == head){
+            if (node.getElement().getKey().compareTo(tail.getElement().getKey()) == 0){
                 head = new DoubleList.DoubleListNode<>(e, null, head.getNext());
             }
             else if (node == tail){
@@ -155,10 +156,27 @@ public class OrderedDoubleList<K extends Comparable<K>,V> implements OrderedDict
         if (node.getElement().getKey().compareTo(key) > 0)
             return null;
         else{ //elemento encontrado
-            DoubleList.DoubleListNode<Entry<K,V>> prev = node.getPrevious();
-            DoubleList.DoubleListNode<Entry<K,V>> next = node.getNext();
-            prev.setNext(next);
-            next.setPrevious(prev);
+            if(node.getElement().getKey().compareTo(head.getElement().getKey()) == 0){
+                head = head.getNext();
+                if (head == null)
+                    tail = null;
+                else
+                    head.setPrevious(null);
+                currentSize--;
+            }
+            else if (node.getElement().getKey().compareTo(tail.getElement().getKey()) == 0){
+                tail = tail.getPrevious();
+                if (tail == null)
+                    head = null;
+                else
+                    tail.setNext(null);
+            }
+            else{
+                DoubleList.DoubleListNode<Entry<K,V>> prev = node.getPrevious();
+                DoubleList.DoubleListNode<Entry<K,V>> next = node.getNext();
+                prev.setNext(next);
+                next.setPrevious(prev);
+            }
             return node.getElement().getValue();
         }
     }
