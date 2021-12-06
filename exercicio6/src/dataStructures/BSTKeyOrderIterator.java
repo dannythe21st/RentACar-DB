@@ -27,7 +27,7 @@ public class BSTKeyOrderIterator<K,V> implements BSTIterator{
 
     @Override
     public void rewind() {
-        nextToReturn = node;
+        this.nextToReturn = node;
     }
 
     private BSTNode<K,V> runBranch(BSTNode<K,V> node){

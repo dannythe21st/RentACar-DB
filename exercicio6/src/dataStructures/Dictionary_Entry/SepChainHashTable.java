@@ -79,8 +79,9 @@ public class SepChainHashTable<K extends Comparable<K>, V>
 
     @Override
     public V remove(K key) {
-        //TODO: Left as an exercise.
-        return null;
+        dataStructures.Dictionary<K, V> e = table[this.hash(key)];
+        e.remove(key);
+        return e.find(key);
     }
 
     @Override
