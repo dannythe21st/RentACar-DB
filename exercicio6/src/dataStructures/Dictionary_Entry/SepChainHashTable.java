@@ -41,8 +41,8 @@ public class SepChainHashTable<K extends Comparable<K>, V>
         table = (dataStructures.Dictionary<K, V>[]) new Dictionary[arraySize];
         for (int i = 0; i < arraySize; i++)
             //TODO: Original comentado para nao dar erro de compilacao.
-            table[i] = new OrderedDoubleList<K,V>();
-            //table[i] = null;
+            //table[i] = new OrderedDoubleList<K,V>();
+            table[i] = null;
         maxSize = capacity;
         currentSize = 0;
     }
@@ -75,24 +75,19 @@ public class SepChainHashTable<K extends Comparable<K>, V>
         }
         //TODO: Left as an exercise.
         dataStructures.Dictionary<K, V> d = table[this.hash(key)];
-        d.insert(key,value);
-        return value;
+        return d.insert(key,value);
     }
 
     @Override
     public V remove(K key) {
         dataStructures.Dictionary<K, V> d = table[this.hash(key)];
-        d.remove(key);
-        return d.find(key);
+        return d.remove(key);
     }
 
     @Override
-    public Iterator<Entry<K, V>> iterator() {
-        //TODO: Left as an exercise.
-        return null;
-    }
+    public Iterator<Entry<K, V>> iterator() { return new SepChainHashTableIterator(); }
 
-    private void rehash(){
+    protected void rehash(){
         resize();
         Iterator<Entry<K,V>> it = this.iterator();
         if (it.hasNext()){
@@ -103,23 +98,7 @@ public class SepChainHashTable<K extends Comparable<K>, V>
     }
 
     private void resize(){
-        //size = currentSize*2;
+        this.maxSize = maxSize*2;
     }
-    //APAGAR
-    /*private boolean equalKeys(Dictionary d1, Dictionary d2){
-        Iterator it1 = d1.iterator();
-        Iterator it2 = d2.iterator();
-        boolean equal = false;
-        if (it1.hasNext() && it2.hasNext()){
-            while(it1.hasNext() && it2.hasNext()){
-                 Entry <K,V> e = (Entry<K, V>) it1.next();
-                 Entry<K,V> e2 = (Entry<K, V>) it2.next();
-                 if (e.getKey().compareTo(e2.getKey()) != 0)
-                     equal = false;
-                 equal = true;
-            }
-        }
-        return equal;
-    }*/
 }
 

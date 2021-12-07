@@ -1,9 +1,10 @@
 package dataStructures.Dictionary_Entry;
 
-import dataStructures.Iterator;
-import dataStructures.NoSuchElementException;
+import dataStructures.*;
 
-public class SepChainHashTableIterator implements Iterator {
+public class SepChainHashTableIterator<K extends Comparable<K>, V> implements Iterator {
+
+    private OrderedDoubleList<K,V> nextToReturn;
 
     public SepChainHashTableIterator() {
 
@@ -11,7 +12,7 @@ public class SepChainHashTableIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return false;
+        return nextToReturn != null;
     }
 
     @Override
