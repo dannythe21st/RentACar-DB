@@ -3,6 +3,8 @@ package dataStructures.Dictionary_Entry;
 import dataStructures.*;
 import dataStructures.Dictionary;
 
+import javax.lang.model.element.Element;
+
 /**
  * Separate Chaining Hash table implementation
  * @author AED  Team
@@ -39,8 +41,8 @@ public class SepChainHashTable<K extends Comparable<K>, V>
         table = (dataStructures.Dictionary<K, V>[]) new Dictionary[arraySize];
         for (int i = 0; i < arraySize; i++)
             //TODO: Original comentado para nao dar erro de compilacao.
-            // table[i] = new OrderedDoubleList<K,V>();
-            table[i] = null;
+            table[i] = new OrderedDoubleList<K,V>();
+            //table[i] = null;
         maxSize = capacity;
         currentSize = 0;
     }
@@ -67,21 +69,21 @@ public class SepChainHashTable<K extends Comparable<K>, V>
 
     @Override
     public V insert(K key, V value) {
-        if (this.isFull())
-            //TODO: left as an exercise.
-            //Original commented, to compile.
-            // this.rehash();
+        if (this.isFull()){
+            this.rehash();
             return null;
-
+        }
         //TODO: Left as an exercise.
-        return null;
+        dataStructures.Dictionary<K, V> d = table[this.hash(key)];
+        d.insert(key,value);
+        return value;
     }
 
     @Override
     public V remove(K key) {
-        dataStructures.Dictionary<K, V> e = table[this.hash(key)];
-        e.remove(key);
-        return e.find(key);
+        dataStructures.Dictionary<K, V> d = table[this.hash(key)];
+        d.remove(key);
+        return d.find(key);
     }
 
     @Override
@@ -89,5 +91,35 @@ public class SepChainHashTable<K extends Comparable<K>, V>
         //TODO: Left as an exercise.
         return null;
     }
+
+    private void rehash(){
+        resize();
+        Iterator<Entry<K,V>> it = this.iterator();
+        if (it.hasNext()){
+            while (it.hasNext()){
+                hash(it.next().getKey());
+            }
+        }
+    }
+
+    private void resize(){
+        //size = currentSize*2;
+    }
+    //APAGAR
+    /*private boolean equalKeys(Dictionary d1, Dictionary d2){
+        Iterator it1 = d1.iterator();
+        Iterator it2 = d2.iterator();
+        boolean equal = false;
+        if (it1.hasNext() && it2.hasNext()){
+            while(it1.hasNext() && it2.hasNext()){
+                 Entry <K,V> e = (Entry<K, V>) it1.next();
+                 Entry<K,V> e2 = (Entry<K, V>) it2.next();
+                 if (e.getKey().compareTo(e2.getKey()) != 0)
+                     equal = false;
+                 equal = true;
+            }
+        }
+        return equal;
+    }*/
 }
 
