@@ -184,9 +184,9 @@ create or replace trigger adiciona_aluguer_ativo
     for each row
     declare numAlugueres number;
     begin
-        select numAlugeres 
-        from empresariais where (num = :new.numCliente)
-        
+        update empresariais set numAlugueres = numAlugueres+1 where (numCliente = :new.numCliente);
+    end;    
+/        
 
 --Um cliente particular recebe 5% do valor total dos alugueres em pontos
 create or replace trigger adiciona_pontos
