@@ -195,7 +195,7 @@ insert into carros values ('86-AR-35', 2008, 'SKODA', 'OCTAVIA', 'NORMAL', 'TAVI
 insert into carros values ('13-AB-34', 2022, 'MERCEDES', 'CLASSE A', 'NORMAL', 'ESTORIL');
 insert into carros values ('64-WW-35', 2017, 'VOLVO', 'V40', 'NORMAL', 'CASCAIS');
 insert into carros values ('64-HH-35', 2018, 'MAZDA', '3', 'NORMAL', 'SINTRA');
-insert into carros values('19-SL-04', 2020, 'KIA', 'EV6', 'NORMAL', 'SINTRA');
+insert into carros values ('19-SL-04', 2020, 'KIA', 'EV6', 'NORMAL', 'SINTRA');
 
     ------LUXO------
 

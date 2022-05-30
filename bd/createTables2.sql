@@ -1,4 +1,4 @@
---TODO DEFINIR CONSTANTES COMO NUMERO MAXIMO DE ALUGUERES, PONTOS INICIAIS (0)
+--TO-DO DEFINIR CONSTANTES COMO NUMERO MAXIMO DE ALUGUERES, PONTOS INICIAIS (0)
 
 drop table pessoas cascade constraints;
 drop table clientes cascade constraints;
@@ -17,6 +17,7 @@ drop table possui cascade constraints;
 
 drop sequence refer_aluguer;
 drop sequence make_numcliente;
+
 
 ---------------------------------CRIACAO TABELAS---------------------------------
 
@@ -160,10 +161,10 @@ increment by 1;
 --verifica se um cliente empresarial pode alugar mais 1 carro ou se ja chegou ao limite
 create or replace trigger verifica_limite_alugueres
   before insert on alugueres
-  declare exceded int;
+  declare exceded number;
   begin
-    select count(*) from empresariais where (numCliente = new.numCliente and maxAlugueres +1 > numAlugueres) into exceded
-    if (exceded > 1)
+    select count(*) into exceded from empresariais where (numCliente = new.numCliente and maxAlugueres+1 > numAlugueres) 
+    if (exceded > 0)
       then Raise_Application_Error (-20100, 'Atingiu o limite de carros alugados. Tera de esperar que um dos alugueres ativos termine.');
     end if;
   end;
