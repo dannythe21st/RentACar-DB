@@ -343,6 +343,20 @@ insert into empresariais values(10002, 0);
 insert into empresariais values(10010, 0);
 
 
+---------------------------------VENDEDORES---------------------------------
+
+insert into vendedores values(100000014, make_numinterno.nextval, 1300, 'TAVIRA');
+insert into vendedores values(100000080, make_numinterno.nextval, 1300, 'MATOSINHOS');
+insert into vendedores values(100000081, make_numinterno.nextval, 1300, 'SINTRA');
+insert into vendedores values(100000082, make_numinterno.nextval, 1300, 'SINTRA');
+insert into vendedores values(100000083, make_numinterno.nextval, 1300, 'MATOSINHOS');
+insert into vendedores values(100000084, make_numinterno.nextval, 1300, 'SINTRA');
+insert into vendedores values(100000085, make_numinterno.nextval, 1300, 'TAVIRA');
+insert into vendedores values(100000086, make_numinterno.nextval, 1300, 'MATOSINHOS');
+insert into vendedores values(100000087, make_numinterno.nextval, 1300, 'SINTRA');
+insert into vendedores values(100000088, make_numinterno.nextval, 1300, 'TAVIRA');
+
+
 
 ---------------------------------CONSULTAS---------------------------------
 

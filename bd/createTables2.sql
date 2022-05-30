@@ -66,7 +66,7 @@ alter table empresariais add constraint fk_empresclientes foreign key (numClient
 create table vendedores(
     nif varchar2(9),
     numInterno int,
-    contacto varchar2(9),
+    salario int,
     nomeFilial varchar2(20)
 );
 alter table vendedores add constraint un_vendedores unique (numInterno);
@@ -148,6 +148,10 @@ increment by 1
 minvalue 0;
 
 create sequence make_numcliente
+start with 1000
+increment by 1;
+
+create sequence make_numinterno
 start with 1000
 increment by 1;
 
