@@ -1,4 +1,7 @@
---TO-DO DEFINIR CONSTANTES COMO NUMERO MAXIMO DE ALUGUERES, PONTOS INICIAIS (0)
+-- TODO  
+-- DEFINIR CONSTANTES COMO NUMERO MAXIMO DE ALUGUERES, PONTOS INICIAIS (0)
+-- TRIGGER COUNTER PARA NUMALUGUERES (EMPRESARIAIS)
+-- TRIGGER INC PONTOS (PARTICULARES)
 
 drop table pessoas cascade constraints;
 drop table clientes cascade constraints;
@@ -162,9 +165,11 @@ increment by 1;
 --verifica se um cliente empresarial pode alugar mais 1 carro ou se ja chegou ao limite
 create or replace trigger verifica_limite_alugueres
   before insert on alugueres
+  for each row
   declare exceeded number;
   begin
-    select count(*) into exceeded from empresariais where (numCliente = :new.numCliente and maxAlugueres+1 > numAlugueres); 
+    select count(*) into exceeded 
+    from empresariais where (numCliente = :new.numCliente and numAlugueres+1 > maxAlugueres); 
     if (exceeded > 0)
       then Raise_Application_Error (-20100, 'Atingiu o limite de carros alugados. Tera de esperar que um dos alugueres ativos termine.');
     end if;
@@ -173,7 +178,17 @@ create or replace trigger verifica_limite_alugueres
 
 drop trigger verifica_limite_alugueres;
 
+--Acrescenta um novo aluguer ativo ao counter dum cliente empresarial
+create or replace trigger adiciona_aluguer_ativo
+    after insert on alugueres
+    for each row
+    declare numAlugueres number;
+    begin
+        select numAlugeres 
+        from empresariais where (num = :new.numCliente)
+        
 
+--Um cliente particular recebe 5% do valor total dos alugueres em pontos
 create or replace trigger adiciona_pontos
     after insert on alugueres
     begin
@@ -185,6 +200,10 @@ create or replace trigger adiciona_pontos
 /    
  
 drop trigger adiciona_pontos;
+
+--Um cliente particular recebe 5% de desconto a cada 1500 pontos
+create or replace trigger faz_desconto
+    
 
 
 
