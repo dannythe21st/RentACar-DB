@@ -329,14 +329,14 @@ insert into clientes values(100000015, make_numcliente.nextval);
 
 
 
----------------------------------CLIENTES PARTICULARES---------------------------------
+---------------------------------CLIENTES PARTICULARES--------------------------
 
 insert into particulares values(10001, 0);
 insert into particulares values(10010, 0);
 insert into particulares values(10002, 0);
 
 
----------------------------------CLIENTES EMPRESARIAIS---------------------------------
+---------------------------------CLIENTES EMPRESARIAIS--------------------------
 
 insert into empresariais values(10001, 0);
 insert into empresariais values(10002, 0);

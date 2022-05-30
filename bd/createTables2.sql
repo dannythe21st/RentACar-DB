@@ -68,6 +68,7 @@ create table vendedores(
     nif varchar2(9),
     numInterno int,
     salario int,
+    numVendas int,
     nomeFilial varchar2(20)
 );
 alter table vendedores add constraint un_vendedores unique (numInterno);
@@ -161,16 +162,32 @@ increment by 1;
 --verifica se um cliente empresarial pode alugar mais 1 carro ou se ja chegou ao limite
 create or replace trigger verifica_limite_alugueres
   before insert on alugueres
-  declare exceded number;
+  declare exceeded number;
   begin
-    select count(*) into exceded from empresariais where (numCliente = new.numCliente and maxAlugueres+1 > numAlugueres) 
-    if (exceded > 0)
+    select count(*) into exceeded from empresariais where (numCliente = :new.numCliente and maxAlugueres+1 > numAlugueres); 
+    if (exceeded > 0)
       then Raise_Application_Error (-20100, 'Atingiu o limite de carros alugados. Tera de esperar que um dos alugueres ativos termine.');
     end if;
   end;
 /
 
 drop trigger verifica_limite_alugueres;
+
+
+create or replace trigger adiciona_pontos
+    after insert on alugueres
+    begin
+        select pontos from alugueres inner join clientes using (numCliente);
+        if()
+        
+        end if;
+    end;    
+/    
+ 
+drop trigger adiciona_pontos;
+
+
+
 
 
 
