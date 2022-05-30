@@ -310,9 +310,24 @@ insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM
 
 ---------------------------------CLIENTES---------------------------------
 
-insert into clientes values(100000000, 10000);
-insert into clientes values(100000001, 10001);
-insert into clientes values(100000002, 10002);
+insert into clientes values(100000000, make_numcliente.nextval);
+insert into clientes values(100000001, make_numcliente.nextval);
+insert into clientes values(100000002, make_numcliente.nextval);
+insert into clientes values(100000003, make_numcliente.nextval);
+insert into clientes values(100000004, make_numcliente.nextval);
+insert into clientes values(100000005, make_numcliente.nextval);
+insert into clientes values(100000006, make_numcliente.nextval);
+insert into clientes values(100000007, make_numcliente.nextval);
+insert into clientes values(100000008, make_numcliente.nextval);
+insert into clientes values(100000009, make_numcliente.nextval);
+insert into clientes values(100000010, make_numcliente.nextval);
+insert into clientes values(100000011, make_numcliente.nextval);
+insert into clientes values(100000012, make_numcliente.nextval);
+insert into clientes values(100000013, make_numcliente.nextval);
+insert into clientes values(100000014, make_numcliente.nextval);
+insert into clientes values(100000015, make_numcliente.nextval);
+
+
 
 ---------------------------------CLIENTES PARTICULARES---------------------------------
 

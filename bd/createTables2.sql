@@ -69,8 +69,9 @@ create table vendedores(
     contacto varchar2(9),
     nomeFilial varchar2(20)
 );
-alter table vendedores add constraint fk_vendedorPessoas foreign key (nif) references pessoas(nif);
-alter table vendedores add constraint fk_vendedorFilial foreign key (nomeFilial) references filiais(nomeFilial);
+alter table vendedores add constraint un_vendedores unique (numInterno);
+alter table vendedores add constraint fk_vendedoresPessoas foreign key (nif) references pessoas(nif);
+alter table vendedores add constraint fk_vendedoresFilial foreign key (nomeFilial) references filiais(nomeFilial);
 
 ---------------------------------FILIAIS---------------------------------
 
@@ -93,10 +94,6 @@ alter table carros add constraint pk_carros primary key (matricula);
 alter table carros add constraint fk_carroscat foreign key (nomeCat) references categorias(nomeCat);
 alter table carros add constraint fk_carrosfiliais foreign key (nomeFilial) references filiais(nomeFilial);
 
-insert into filiais values ('SINTRA');
-
-insert into carros values ('64-HH-35', 2018, 'MAZDA', '3', 'NORMAL', 'SINTRA');
-
 ---------------------------------CATEGORIAS---------------------------------
 
 create table categorias(
@@ -115,7 +112,7 @@ create table alugueres(
     matricula varchar2(8)
 );
 alter table alugueres add constraint pk_alugueres primary key (referencia);
-alter table alugueres add constraint fk_aluguerespessoas foreign key (numCliente) references clientes(numCliente);
+alter table alugueres add constraint fk_alugueresclientes foreign key (numCliente) references clientes(numCliente);
 alter table alugueres add constraint fk_aluguerescarros foreign key (matricula) references carros(matricula);
 
 ---------------------------------EXTRAS---------------------------------
