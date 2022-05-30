@@ -339,11 +339,12 @@ insert into particulares values(10002, 0);
 ---------------------------------CLIENTES EMPRESARIAIS--------------------------
 
 insert into empresariais values(10001, 1, 0);
-insert into alugueres values(0003, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10001, '12-AC-35');
+insert into alugueres values(make_refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10001, '12-AC-35');
 select * from alugueres where numcliente = 10001;
-insert into alugueres values(0004, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10001, '12-AB-34');
+insert into alugueres values(make_refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10001, '12-AB-34');
 select * from alugueres where numcliente = 10001;
 insert into alugueres values(0005, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10001, '12-AB-34');
+
 
 
 insert into empresariais values(10002, 0);

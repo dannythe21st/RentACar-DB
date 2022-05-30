@@ -18,8 +18,9 @@ drop table extras cascade constraints;
 drop table faz cascade constraints;
 drop table possui cascade constraints;
 
-drop sequence refer_aluguer;
+drop sequence make_refer_aluguer;
 drop sequence make_numcliente;
+drop sequence make_numinterno;
 
 
 ---------------------------------CRIACAO TABELAS---------------------------------
@@ -147,7 +148,7 @@ alter table faz add constraint pk_faz primary key (nif, referencia);
 
 ---------------------------------SEQUENCIAS---------------------------------
 
-create sequence refer_aluguer
+create sequence make_refer_aluguer
 start with 00000
 increment by 1
 minvalue 0;
