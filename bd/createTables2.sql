@@ -185,22 +185,29 @@ create or replace trigger adiciona_aluguer_ativo
     for each row
     declare numAlugueres number;
     begin
-        update empresariais set numAlugueres = numAlugueres+1 where (numCliente = :new.numCliente);
+        update empresariais set numAlugueres = numAlugueres+1 
+        where (numCliente = :new.numCliente);
     end;    
 /        
+
+drop trigger adiciona_aluguer_ativo;
 
 --Um cliente particular recebe 5% do valor total dos alugueres em pontos
 create or replace trigger adiciona_pontos
     after insert on alugueres
+    for each row
+    declare pontos number;
+    declare numCliente number;
+    declare dataDiff number;
     begin
-        select pontos from alugueres inner join clientes using (numCliente);
-        if()
-        
-        end if;
+        select precoCat as dailyFee, dataI - dataF as dataDiff, precoCat as preco 
+            from alugueres inner join carros using (matricula)  
+            where (numCliente = :new.numCliente);
+        update particulares set pontos = pontos + (dataDiff * preco * 0.05);
     end;    
 /    
  
-drop trigger adiciona_pontos;
+
 
 --Um cliente particular recebe 5% de desconto a cada 1500 pontos
 create or replace trigger faz_desconto
