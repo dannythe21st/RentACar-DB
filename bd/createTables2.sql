@@ -147,17 +147,18 @@ create table faz(
 ---------------------------------SEQUENCIAS---------------------------------
 
 create sequence make_refer_aluguer
-start with 1000
-increment by 1
-minvalue 0;
+start with concat('REF', 1000)
+increment by 1;
 
 create sequence make_numcliente
-start with 10000
-increment by 1;
+start with numeric(00000,0)
+increment by 1
+minvalue 0000;
 
 create sequence make_numinterno
-start with 1000
-increment by 1;
+start with numeric(0000,0)
+increment by 1
+minvalue 0000;
 
 ---------------------------------TRIGGERS---------------------------------
 
