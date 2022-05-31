@@ -199,16 +199,7 @@ create or replace trigger adiciona_pontos
         where (numCliente = :new.numCliente);
     end;    
 /    
-drop trigger adiciona_pontos;
-
-create or replace trigger new_numCliente
-    before insert on alugueres
-    begin
-        if(:new.numCliente is null)
-        then set :new.numCliente = make_numcliente.nextval;
-        end if;
-    end;
-/    
+drop trigger adiciona_pontos; 
 
 --Um cliente particular recebe 5% de desconto a cada 1500 pontos
 create or replace trigger aplica_desconto
@@ -218,4 +209,36 @@ create or replace trigger aplica_desconto
 
 drop trigger aplica_desconto;
 
+--Triggers para as sequencias
 
+create or replace trigger new_numCliente
+    before insert on alugueres
+    for each row
+    begin
+        select make_numcliente.nextval
+        into :new.numcliente
+        from dual;
+    end;
+/   
+
+create or replace trigger new_referencia
+    before insert on alugueres
+    for each row
+    begin
+        select make_refer_aluguer.nextval
+        into :new.referencia
+        from dual;
+    end;
+/   
+
+create or replace trigger new_numInterno
+    before insert on vendedores
+    for each row
+    begin
+        select make_numinterno.nextval
+        into :new.numInterno
+        from dual;
+    end;
+/   
+
+drop trigger new_numInterno;
