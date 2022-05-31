@@ -201,9 +201,8 @@ drop trigger adiciona_pontos;
 
 create or replace trigger new_numCliente
     before insert on alugueres
-    for each row 
     begin
-        if(:new_numCliente is null)
+        if(:new.numCliente is null)
         then set :new.numCliente = make_numcliente.nextval;
         end if;
     end;
