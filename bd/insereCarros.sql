@@ -8,112 +8,112 @@ delete from filiais;
 
 ---------------------------------PESSOAS---------------------------------
 
-insert into pessoas values (100000000, 'DANIEL', 'RUA SESAMO 1');
-insert into pessoas values (100000001, 'JOAO', 'RUA SESAMO 2');
-insert into pessoas values (100000002, 'TERESA', 'RUA SESAMO 3');
-insert into pessoas values (100000003, 'MIA', 'RUA SESAMO 4');
-insert into pessoas values (100000004, 'SARA', 'RUA SESAMO 5');
-insert into pessoas values (100000005, 'CARLOS', 'RUA SESAMO 6');
-insert into pessoas values (100000006, 'FERNANDO', 'RUA SESAMO 7');
-insert into pessoas values (100000007, 'CATARINA', 'RUA SESAMO 8');
-insert into pessoas values (100000008, 'ANA', 'RUA SESAMO 9');
-insert into pessoas values (100000009, 'SOFIA', 'RUA SESAMO 10');
-insert into pessoas values (100000010, 'PAULO', 'RUA SESAMO 11');
-insert into pessoas values (100000011, 'CLARA', 'RUA SESAMO 12');
-insert into pessoas values (100000012, 'FRANCISCO', 'RUA SESAMO 13');
-insert into pessoas values (100000013, 'PAULO', 'RUA SESAMO 14');
-insert into pessoas values (100000014, 'BEATRIZ', 'RUA SESAMO 15');
-insert into pessoas values (100000015, 'RUI', 'RUA SESAMO 16');
-insert into pessoas values (100000016, 'MIGUEL', 'RUA SESAMO 17');
-insert into pessoas values (100000017, 'MANEL', 'RUA SESAMO 18');
-insert into pessoas values (100000018, 'PAULO', 'RUA SESAMO 19');
-insert into pessoas values (100000019, 'SILVIA', 'RUA SESAMO 20');
-insert into pessoas values (100000020, 'FRANCISCO M', 'RUA SESAMO 21');
-insert into pessoas values (100000021, 'MARTIM', 'RUA SESAMO 22');
-insert into pessoas values (100000022, 'SALVADOR', 'RUA SESAMO 23');
-insert into pessoas values (100000023, 'ISAAC', 'RUA SESAMO 24');
-insert into pessoas values (100000024, 'CARLOTA', 'RUA SESAMO 25');
-insert into pessoas values (100000025, 'DIOGO', 'RUA SESAMO 26');
-insert into pessoas values (100000026, 'JOAO', 'RUA SESAMO 27');
-insert into pessoas values (100000027, 'VITOR', 'RUA SESAMO 28');
-insert into pessoas values (100000028, 'JORGE', 'RUA SESAMO 29');
-insert into pessoas values (100000029, 'MADALENA', 'RUA SESAMO 30');
-insert into pessoas values (100000030, 'MAFALDA', 'RUA SESAMO 31');
-insert into pessoas values (100000031, 'RITA', 'RUA SESAMO 32');
-insert into pessoas values (100000032, 'RICARDO', 'RUA SESAMO 33');
-insert into pessoas values (100000033, 'ANDREIA', 'RUA SESAMO 34');
-insert into pessoas values (100000034, 'ANDRE', 'RUA SESAMO 35');
-insert into pessoas values (100000035, 'DIANA', 'RUA SESAMO 36');
-insert into pessoas values (100000036, 'MARIA JOAO', 'RUA SESAMO 37');
-insert into pessoas values (100000037, 'JOAO MARIA', 'RUA SESAMO 38');
-insert into pessoas values (100000038, 'JOSE', 'RUA SESAMO 39');
-insert into pessoas values (100000039, 'HENRIQUE', 'RUA SESAMO 40');
-insert into pessoas values (100000040, 'JULIAO', 'RUA SESAMO 41');
-insert into pessoas values (100000041, 'VASCO', 'RUA SESAMO 42');
-insert into pessoas values (100000042, 'RODRIGO', 'RUA SESAMO 43');
-insert into pessoas values (100000043, 'DANILO', 'RUA SESAMO 44');
-insert into pessoas values (100000044, 'BERNARDO', 'RUA SESAMO 45');
-insert into pessoas values (100000045, 'JULIO', 'RUA SESAMO 46');
-insert into pessoas values (100000046, 'CAROLINA', 'RUA SESAMO 47');
-insert into pessoas values (100000047, 'ALICE', 'RUA SESAMO 48');
-insert into pessoas values (100000048, 'BARBARA', 'RUA SESAMO 49');
-insert into pessoas values (100000049, 'BENEDITA', 'RUA SESAMO 50');
-insert into pessoas values (100000050, 'CARMEN', 'RUA SESAMO 51');
-insert into pessoas values (100000051, 'GRACA', 'RUA SESAMO 52');
-insert into pessoas values (100000052, 'ISABEL', 'RUA SESAMO 53');
-insert into pessoas values (100000053, 'VERA', 'RUA SESAMO 54');
-insert into pessoas values (100000054, 'INES', 'RUA SESAMO 55');
-insert into pessoas values (100000055, 'LUISA', 'RUA SESAMO 56');
-insert into pessoas values (100000056, 'LUIS', 'RUA SESAMO 57');
-insert into pessoas values (100000057, 'LEONOR', 'RUA SESAMO 58');
-insert into pessoas values (100000058, 'OLIVIA', 'RUA SESAMO 59');
-insert into pessoas values (100000059, 'PATRICIA', 'RUA SESAMO 60');
-insert into pessoas values (100000060, 'EMILIA', 'RUA SESAMO 61');
-insert into pessoas values (100000061, 'ROSA', 'RUA SESAMO 62');
-insert into pessoas values (100000062, 'ANTONIO', 'RUA SESAMO 63');
-insert into pessoas values (100000063, 'BENJAMIM', 'RUA SESAMO 64');
-insert into pessoas values (100000064, 'CAETANO', 'RUA SESAMO 65');
-insert into pessoas values (100000065, 'DUARTE', 'RUA SESAMO 66');
-insert into pessoas values (100000066, 'GABRIEL', 'RUA SESAMO 67');
-insert into pessoas values (100000067, 'GONCALO', 'RUA SESAMO 68');
-insert into pessoas values (100000068, 'MARIO', 'RUA SESAMO 69');
-insert into pessoas values (100000069, 'PILAR', 'RUA SESAMO 70');
-insert into pessoas values (100000070, 'MARIANA', 'RUA SESAMO 71');
-insert into pessoas values (100000071, 'MERCEDES', 'RUA SESAMO 72');
-insert into pessoas values (100000072, 'MONICA', 'RUA SESAMO 73');
-insert into pessoas values (100000073, 'NUNO', 'RUA SESAMO 74');
-insert into pessoas values (100000074, 'FREDERICO', 'RUA SESAMO 75');
-insert into pessoas values (100000075, 'SIMAO', 'RUA SESAMO 75');
-insert into pessoas values (100000076, 'JAIME', 'RUA SESAMO 76');
-insert into pessoas values (100000077, 'ALEXANDRE', 'RUA SESAMO 77');
-insert into pessoas values (100000078, 'DINIS', 'RUA SESAMO 78');
-insert into pessoas values (100000079, 'GUILHERME', 'RUA SESAMO 79');
-insert into pessoas values (100000080, 'PEDRO', 'RUA SESAMO 80');
-insert into pessoas values (100000081, 'DORA', 'RUA SESAMO 81');
-insert into pessoas values (100000082, 'RUTE', 'RUA SESAMO 82');
-insert into pessoas values (100000083, 'SONIA', 'RUA SESAMO 83');
-insert into pessoas values (100000084, 'ENZO', 'RUA SESAMO 84');
-insert into pessoas values (100000085, 'CRISTAL', 'RUA SESAMO 85');
-insert into pessoas values (100000086, 'ADOLFO', 'RUA SESAMO 86');
-insert into pessoas values (100000087, 'SUSANA', 'RUA SESAMO 87');
-insert into pessoas values (100000088, 'NAZARE', 'RUA SESAMO 88');
-insert into pessoas values (100000089, 'FABIO', 'RUA SESAMO 89');
-insert into pessoas values (100000090, 'TELMO', 'RUA SESAMO 90');
-insert into pessoas values (100000091, 'LEANDRO', 'RUA SESAMO 91');
-insert into pessoas values (100000092, 'CIDALIA', 'RUA SESAMO 92');
-insert into pessoas values (100000093, 'ROSALINA', 'RUA SESAMO 93');
-insert into pessoas values (100000094, 'GEDSON', 'RUA SESAMO 94');
-insert into pessoas values (100000095, 'AMILCAR', 'RUA SESAMO 95');
-insert into pessoas values (100000096, 'BRUNO', 'RUA SESAMO 96');
-insert into pessoas values (100000097, 'BRUNA', 'RUA SESAMO 97');
-insert into pessoas values (100000098, 'TATIANA', 'RUA SESAMO 98');
-insert into pessoas values (100000099, 'LILIANA', 'RUA SESAMO 99');
-insert into pessoas values (100000100, 'VITORIA', 'RUA SESAMO 100');
-insert into pessoas values (100000101, 'MARISOL', 'RUA SESAMO 101');
-insert into pessoas values (100000102, 'ROGERIO', 'RUA SESAMO 102');
-insert into pessoas values (100000103, 'SEBASTIAO', 'RUA SESAMO 103');
-insert into pessoas values (100000104, 'ANGELO', 'RUA SESAMO 104');
-insert into pessoas values (100000105, 'ANGELA', 'RUA SESAMO 105');
+insert into clientes values (100000000, 'DANIEL', 'RUA SESAMO 1');
+insert into clientes values (100000001, 'JOAO', 'RUA SESAMO 2');
+insert into clientes values (100000002, 'TERESA', 'RUA SESAMO 3');
+insert into clientes values (100000003, 'MIA', 'RUA SESAMO 4');
+insert into clientes values (100000004, 'SARA', 'RUA SESAMO 5');
+insert into clientes values (100000005, 'CARLOS', 'RUA SESAMO 6');
+insert into clientes values (100000006, 'FERNANDO', 'RUA SESAMO 7');
+insert into clientes values (100000007, 'CATARINA', 'RUA SESAMO 8');
+insert into clientes values (100000008, 'ANA', 'RUA SESAMO 9');
+insert into clientes values (100000009, 'SOFIA', 'RUA SESAMO 10');
+insert into clientes values (100000010, 'PAULO', 'RUA SESAMO 11');
+insert into clientes values (100000011, 'CLARA', 'RUA SESAMO 12');
+insert into clientes values (100000012, 'FRANCISCO', 'RUA SESAMO 13');
+insert into clientes values (100000013, 'PAULO', 'RUA SESAMO 14');
+insert into clientes values (100000014, 'BEATRIZ', 'RUA SESAMO 15');
+insert into clientes values (100000015, 'RUI', 'RUA SESAMO 16');
+insert into clientes values (100000016, 'MIGUEL', 'RUA SESAMO 17');
+insert into clientes values (100000017, 'MANEL', 'RUA SESAMO 18');
+insert into clientes values (100000018, 'PAULO', 'RUA SESAMO 19');
+insert into clientes values (100000019, 'SILVIA', 'RUA SESAMO 20');
+insert into clientes values (100000020, 'FRANCISCO M', 'RUA SESAMO 21');
+insert into clientes values (100000021, 'MARTIM', 'RUA SESAMO 22');
+insert into clientes values (100000022, 'SALVADOR', 'RUA SESAMO 23');
+insert into clientes values (100000023, 'ISAAC', 'RUA SESAMO 24');
+insert into clientes values (100000024, 'CARLOTA', 'RUA SESAMO 25');
+insert into clientes values (100000025, 'DIOGO', 'RUA SESAMO 26');
+insert into clientes values (100000026, 'JOAO', 'RUA SESAMO 27');
+insert into clientes values (100000027, 'VITOR', 'RUA SESAMO 28');
+insert into clientes values (100000028, 'JORGE', 'RUA SESAMO 29');
+insert into clientes values (100000029, 'MADALENA', 'RUA SESAMO 30');
+insert into clientes values (100000030, 'MAFALDA', 'RUA SESAMO 31');
+insert into clientes values (100000031, 'RITA', 'RUA SESAMO 32');
+insert into clientes values (100000032, 'RICARDO', 'RUA SESAMO 33');
+insert into clientes values (100000033, 'ANDREIA', 'RUA SESAMO 34');
+insert into clientes values (100000034, 'ANDRE', 'RUA SESAMO 35');
+insert into clientes values (100000035, 'DIANA', 'RUA SESAMO 36');
+insert into clientes values (100000036, 'MARIA JOAO', 'RUA SESAMO 37');
+insert into clientes values (100000037, 'JOAO MARIA', 'RUA SESAMO 38');
+insert into clientes values (100000038, 'JOSE', 'RUA SESAMO 39');
+insert into clientes values (100000039, 'HENRIQUE', 'RUA SESAMO 40');
+insert into clientes values (100000040, 'JULIAO', 'RUA SESAMO 41');
+insert into clientes values (100000041, 'VASCO', 'RUA SESAMO 42');
+insert into clientes values (100000042, 'RODRIGO', 'RUA SESAMO 43');
+insert into clientes values (100000043, 'DANILO', 'RUA SESAMO 44');
+insert into clientes values (100000044, 'BERNARDO', 'RUA SESAMO 45');
+insert into clientes values (100000045, 'JULIO', 'RUA SESAMO 46');
+insert into clientes values (100000046, 'CAROLINA', 'RUA SESAMO 47');
+insert into clientes values (100000047, 'ALICE', 'RUA SESAMO 48');
+insert into clientes values (100000048, 'BARBARA', 'RUA SESAMO 49');
+insert into clientes values (100000049, 'BENEDITA', 'RUA SESAMO 50');
+insert into clientes values (100000050, 'CARMEN', 'RUA SESAMO 51');
+insert into clientes values (100000051, 'GRACA', 'RUA SESAMO 52');
+insert into clientes values (100000052, 'ISABEL', 'RUA SESAMO 53');
+insert into clientes values (100000053, 'VERA', 'RUA SESAMO 54');
+insert into clientes values (100000054, 'INES', 'RUA SESAMO 55');
+insert into clientes values (100000055, 'LUISA', 'RUA SESAMO 56');
+insert into clientes values (100000056, 'LUIS', 'RUA SESAMO 57');
+insert into clientes values (100000057, 'LEONOR', 'RUA SESAMO 58');
+insert into clientes values (100000058, 'OLIVIA', 'RUA SESAMO 59');
+insert into clientes values (100000059, 'PATRICIA', 'RUA SESAMO 60');
+insert into clientes values (100000060, 'EMILIA', 'RUA SESAMO 61');
+insert into clientes values (100000061, 'ROSA', 'RUA SESAMO 62');
+insert into clientes values (100000062, 'ANTONIO', 'RUA SESAMO 63');
+insert into clientes values (100000063, 'BENJAMIM', 'RUA SESAMO 64');
+insert into clientes values (100000064, 'CAETANO', 'RUA SESAMO 65');
+insert into clientes values (100000065, 'DUARTE', 'RUA SESAMO 66');
+insert into clientes values (100000066, 'GABRIEL', 'RUA SESAMO 67');
+insert into clientes values (100000067, 'GONCALO', 'RUA SESAMO 68');
+insert into clientes values (100000068, 'MARIO', 'RUA SESAMO 69');
+insert into clientes values (100000069, 'PILAR', 'RUA SESAMO 70');
+insert into clientes values (100000070, 'MARIANA', 'RUA SESAMO 71');
+insert into clientes values (100000071, 'MERCEDES', 'RUA SESAMO 72');
+insert into clientes values (100000072, 'MONICA', 'RUA SESAMO 73');
+insert into clientes values (100000073, 'NUNO', 'RUA SESAMO 74');
+insert into clientes values (100000074, 'FREDERICO', 'RUA SESAMO 75');
+insert into clientes values (100000075, 'SIMAO', 'RUA SESAMO 75');
+insert into clientes values (100000076, 'JAIME', 'RUA SESAMO 76');
+insert into clientes values (100000077, 'ALEXANDRE', 'RUA SESAMO 77');
+insert into clientes values (100000078, 'DINIS', 'RUA SESAMO 78');
+insert into clientes values (100000079, 'GUILHERME', 'RUA SESAMO 79');
+insert into clientes values (100000080, 'PEDRO', 'RUA SESAMO 80');
+insert into clientes values (100000081, 'DORA', 'RUA SESAMO 81');
+insert into clientes values (100000082, 'RUTE', 'RUA SESAMO 82');
+insert into clientes values (100000083, 'SONIA', 'RUA SESAMO 83');
+insert into clientes values (100000084, 'ENZO', 'RUA SESAMO 84');
+insert into clientes values (100000085, 'CRISTAL', 'RUA SESAMO 85');
+insert into clientes values (100000086, 'ADOLFO', 'RUA SESAMO 86');
+insert into clientes values (100000087, 'SUSANA', 'RUA SESAMO 87');
+insert into clientes values (100000088, 'NAZARE', 'RUA SESAMO 88');
+insert into clientes values (100000089, 'FABIO', 'RUA SESAMO 89');
+insert into clientes values (100000090, 'TELMO', 'RUA SESAMO 90');
+insert into vendedores values (100000091, 'LEANDRO', 'RUA SESAMO 91');
+insert into vendedores values (100000092, 'CIDALIA', 'RUA SESAMO 92');
+insert into vendedores values (100000093, 'ROSALINA', 'RUA SESAMO 93');
+insert into vendedores values (100000094, 'GEDSON', 'RUA SESAMO 94');
+insert into vendedores values (100000095, 'AMILCAR', 'RUA SESAMO 95');
+insert into vendedores values (100000096, 'BRUNO', 'RUA SESAMO 96');
+insert into vendedores values (100000097, 'BRUNA', 'RUA SESAMO 97');
+insert into vendedores values (100000098, 'TATIANA', 'RUA SESAMO 98');
+insert into vendedores values (100000099, 'LILIANA', 'RUA SESAMO 99');
+insert into vendedores values (100000100, 'VITORIA', 'RUA SESAMO 100');
+insert into vendedores values (100000101, 'MARISOL', 'RUA SESAMO 101');
+insert into vendedores values (100000102, 'ROGERIO', 'RUA SESAMO 102');
+insert into vendedores values (100000103, 'SEBASTIAO', 'RUA SESAMO 103');
+insert into vendedores values (100000104, 'ANGELO', 'RUA SESAMO 104');
+insert into vendedores values (100000105, 'ANGELA', 'RUA SESAMO 105');
 
 ---------------------------------EXTRAS---------------------------------
 
@@ -305,107 +305,107 @@ insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10004, '12-AR-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10014, '14-AB-34');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10016, '12-WH-35);
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10016, '12-WH-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10002, '12-AB-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10007, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10008, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10008, '64-AA-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10009, '10-MN-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-TT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10012, '10-FD-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10012, '10-FD-34');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2020', 'DD.MM.YYYY'), to_date('31.06.2020', 'DD.MM.YYYY'), 10008, '11-XL-87');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2020', 'DD.MM.YYYY'), to_date('31.10.2020', 'DD.MM.YYYY'), 10015, '10-RR-34');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.05.2020', 'DD.MM.YYYY'), to_date(12.05.2020', 'DD.MM.YYYY'), 10010, '64-BM-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.05.2020', 'DD.MM.YYYY'), to_date('12.05.2020', 'DD.MM.YYYY'), 10010, '64-BM-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10008, '12-GG-24');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10012, '19-XB-87');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2020', 'DD.MM.YYYY'), to_date(12.01.2020', 'DD.MM.YYYY'), 10018, '10-AS-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 10018, '10-AS-34');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-AP-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '64-XC-89');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10010, '10-MN-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10010, '10-MN-34');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '10-RR-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '99-AR-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10010, '68-AB-40');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10010, '68-AB-40');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-AB-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10010, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10010, '64-AA-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-PP-24');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-AY-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10010, '12-YH-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10010, '12-YH-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2020', 'DD.MM.YYYY'), to_date('31.06.2020', 'DD.MM.YYYY'), 10008, '12-AB-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2020', 'DD.MM.YYYY'), to_date('31.10.2020', 'DD.MM.YYYY'), 10015, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.05.2020', 'DD.MM.YYYY'), to_date(12.05.2020', 'DD.MM.YYYY'), 10010, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.05.2020', 'DD.MM.YYYY'), to_date('12.05.2020', 'DD.MM.YYYY'), 10010, '64-AA-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10008, '12-PP-24');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10012, '12-AY-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2020', 'DD.MM.YYYY'), to_date(12.01.2020', 'DD.MM.YYYY'), 10018, '12-YH-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 10018, '12-YH-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10008, '12-AC-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10012, '12-AX-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2020', 'DD.MM.YYYY'), to_date(12.01.2020', 'DD.MM.YYYY'), 10018, '12-TW-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 10018, '12-TW-24');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 10000, '12-AP-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('31.04.2021', 'DD.MM.YYYY'), 10010, '64-XC-89');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2021', 'DD.MM.YYYY'), to_date(12.04.2021', 'DD.MM.YYYY'), 10010, '10-MN-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2021', 'DD.MM.YYYY'), to_date('12.04.2021', 'DD.MM.YYYY'), 10010, '10-MN-34');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 10000, '10-RR-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('31.04.2021', 'DD.MM.YYYY'), 10010, '99-AR-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2021', 'DD.MM.YYYY'), to_date(12.04.2021', 'DD.MM.YYYY'), 10010, '68-AB-40');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2021', 'DD.MM.YYYY'), to_date('12.04.2021', 'DD.MM.YYYY'), 10010, '68-AB-40');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 10000, '12-AB-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('31.04.2021', 'DD.MM.YYYY'), 10010, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2021', 'DD.MM.YYYY'), to_date(12.04.2021', 'DD.MM.YYYY'), 10010, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2021', 'DD.MM.YYYY'), to_date('12.04.2021', 'DD.MM.YYYY'), 10010, '64-AA-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 10000, '12-PP-24');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('31.04.2021', 'DD.MM.YYYY'), 10010, '12-AY-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2021', 'DD.MM.YYYY'), to_date(12.04.2021', 'DD.MM.YYYY'), 10010, '12-YH-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2021', 'DD.MM.YYYY'), to_date('12.04.2021', 'DD.MM.YYYY'), 10010, '12-YH-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2021', 'DD.MM.YYYY'), to_date('31.06.2021', 'DD.MM.YYYY'), 10008, '12-AB-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2021', 'DD.MM.YYYY'), to_date('31.10.2021', 'DD.MM.YYYY'), 10015, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.05.2021', 'DD.MM.YYYY'), to_date(12.05.2021', 'DD.MM.YYYY'), 10010, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.05.2021', 'DD.MM.YYYY'), to_date('12.05.2021', 'DD.MM.YYYY'), 10010, '64-AA-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 10008, '12-PP-24');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 10012, '12-AY-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2021', 'DD.MM.YYYY'), to_date(12.01.2021', 'DD.MM.YYYY'), 10018, '12-YH-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2021', 'DD.MM.YYYY'), to_date('12.01.2021', 'DD.MM.YYYY'), 10018, '12-YH-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 10008, '12-AC-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 10012, '12-AX-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2021', 'DD.MM.YYYY'), to_date(12.01.2021', 'DD.MM.YYYY'), 10018, '12-TW-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2021', 'DD.MM.YYYY'), to_date('12.01.2021', 'DD.MM.YYYY'), 10018, '12-TW-24');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-AP-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('31.04.2022', 'DD.MM.YYYY'), 10010, '64-XC-89');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2022', 'DD.MM.YYYY'), to_date(12.04.2022', 'DD.MM.YYYY'), 10010, '10-MN-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 10010, '10-MN-34');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '10-RR-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('31.04.2022', 'DD.MM.YYYY'), 10010, '99-AR-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2022', 'DD.MM.YYYY'), to_date(12.04.2022', 'DD.MM.YYYY'), 10010, '68-AB-40');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 10010, '68-AB-40');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-AB-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('31.04.2022', 'DD.MM.YYYY'), 10010, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2022', 'DD.MM.YYYY'), to_date(12.04.2022', 'DD.MM.YYYY'), 10010, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 10010, '64-AA-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-PP-24');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('31.04.2022', 'DD.MM.YYYY'), 10010, '12-AY-35');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2022', 'DD.MM.YYYY'), to_date(12.04.2022', 'DD.MM.YYYY'), 10010, '12-YH-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 10010, '12-YH-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2022', 'DD.MM.YYYY'), to_date('31.06.2022', 'DD.MM.YYYY'), 10008, '12-AB-34');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2022', 'DD.MM.YYYY'), to_date('31.10.2022', 'DD.MM.YYYY'), 10015, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.05.2022', 'DD.MM.YYYY'), to_date(12.05.2022', 'DD.MM.YYYY'), 10010, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.05.2022', 'DD.MM.YYYY'), to_date('12.05.2022', 'DD.MM.YYYY'), 10010, '64-AA-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 10008, '12-PP-24');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 10012, '12-AY-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2022', 'DD.MM.YYYY'), to_date(12.01.2022', 'DD.MM.YYYY'), 10018, '12-YH-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2022', 'DD.MM.YYYY'), to_date('12.01.2022', 'DD.MM.YYYY'), 10018, '12-YH-35');
 
 insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 10008, '12-AC-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 10012, '12-AX-35');
-insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2022', 'DD.MM.YYYY'), to_date(12.01.2022', 'DD.MM.YYYY'), 10018, '12-TW-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2022', 'DD.MM.YYYY'), to_date('12.01.2022', 'DD.MM.YYYY'), 10018, '12-TW-24');
 
 
 
