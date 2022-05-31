@@ -199,6 +199,16 @@ create or replace trigger adiciona_pontos
 /    
 drop trigger adiciona_pontos;
 
+create or replace trigger new_numCliente
+    before insert on alugueres
+    for each row 
+    begin
+        if(:new_numCliente is null)
+        then set :new.numCliente = make_numcliente.nextval;
+        end if;
+    end;
+/    
+
 --Um cliente particular recebe 5% de desconto a cada 1500 pontos
 create or replace trigger aplica_desconto
         

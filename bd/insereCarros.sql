@@ -344,7 +344,7 @@ select * from alugueres where numcliente = 10001;
 insert into alugueres values(0004, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10001, '12-AB-34');
 select * from alugueres where numcliente = 10001;
 insert into alugueres values(0005, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10001, '12-AB-34');
-delete from alugueres where pk_alugueres = 3;
+delete from alugueres where pk_alugueres = 003
 
 
 insert into empresariais values(10002, 0);
