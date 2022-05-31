@@ -161,7 +161,7 @@ create or replace trigger ins_v_clientes
     begin
         insert into pessoas(nif,nomepessoa,morada) values
         (:new.nif, :new.nomepessoa, :new.morada);
-        insert into clientes (nif,numCliente) values (:new.nif, :new.numCliente);
+        insert into clientes (nif,numCliente) values (:new.nif, null);
     end;
 /    
 
@@ -196,7 +196,7 @@ create or replace trigger ins_v_vendedores
         insert into pessoas(nif,nomepessoa,morada) values
         (:new.nif, :new.nomepessoa, :new.morada);
         insert into vendedores (nif,numInterno) values 
-        (:new.nif, :new.numInterno);
+        (:new.nif, null);
     end;
 / 
 
@@ -301,9 +301,10 @@ create or replace trigger new_numCliente
     for each row
     begin
         if(:new.numCliente is null) then
-            select make_numcliente.nextval
-            into :new.numcliente
-            from dual;
+            --select make_numcliente.nextval
+            --into :new.numcliente
+            --from dual;
+            :new.numCliente := make_numcliente.nextval;
         end if;
     end;
 /   

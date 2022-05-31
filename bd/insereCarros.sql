@@ -115,7 +115,9 @@ delete from filiais;
 --insert into vendedores values (100000104, 'ANGELO', 'RUA SESAMO 104');
 --insert into vendedores values (100000105, 'ANGELA', 'RUA SESAMO 105');
 
-insert into clientes values (100000000,null);
+insert into pessoas values (100000105, 'ANGELA', 'RUA SESAMO 105');
+insert into clientes values (100000105, null);
+select * from clientes;
 insert into clientes values (100000001,null);
 insert into clientes values (100000002,null);
 insert into clientes values (100000003,null);
