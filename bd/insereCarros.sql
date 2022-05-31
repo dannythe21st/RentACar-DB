@@ -296,14 +296,116 @@ insert into carros values ('12-AX-35', 2005, 'SMART', 'FORTWO', 'ECONOMICO', 'MA
 insert into carros values ('12-AC-35', 2018, 'DACIA', 'DUSTER STEPWAY', 'ECONOMICO', 'CASCAIS');
 
 
-
-
-
-
 ----------------------------------ALUGUER---------------------------------
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-AB-34');
+insert into alugueres values(null,to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10003, '12-LL-65');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '64-KL-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10017, '12-AB-14');
 
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10004, '12-AR-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10014, '14-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10016, '12-WH-35);
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10002, '12-AB-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10007, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10008, '64-AA-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10009, '10-MN-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-TT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10012, '10-FD-34');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2020', 'DD.MM.YYYY'), to_date('31.06.2020', 'DD.MM.YYYY'), 10008, '11-XL-87');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2020', 'DD.MM.YYYY'), to_date('31.10.2020', 'DD.MM.YYYY'), 10015, '10-RR-34');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.05.2020', 'DD.MM.YYYY'), to_date(12.05.2020', 'DD.MM.YYYY'), 10010, '64-BM-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10008, '12-GG-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10012, '19-XB-87');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2020', 'DD.MM.YYYY'), to_date(12.01.2020', 'DD.MM.YYYY'), 10018, '10-AS-34');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-AP-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '64-XC-89');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10010, '10-MN-34');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '10-RR-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '99-AR-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10010, '68-AB-40');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10010, '64-AA-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-PP-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-AY-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2020', 'DD.MM.YYYY'), to_date(12.04.2020', 'DD.MM.YYYY'), 10010, '12-YH-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2020', 'DD.MM.YYYY'), to_date('31.06.2020', 'DD.MM.YYYY'), 10008, '12-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2020', 'DD.MM.YYYY'), to_date('31.10.2020', 'DD.MM.YYYY'), 10015, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.05.2020', 'DD.MM.YYYY'), to_date(12.05.2020', 'DD.MM.YYYY'), 10010, '64-AA-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10008, '12-PP-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10012, '12-AY-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2020', 'DD.MM.YYYY'), to_date(12.01.2020', 'DD.MM.YYYY'), 10018, '12-YH-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10008, '12-AC-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10012, '12-AX-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2020', 'DD.MM.YYYY'), to_date(12.01.2020', 'DD.MM.YYYY'), 10018, '12-TW-24');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 10000, '12-AP-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('31.04.2021', 'DD.MM.YYYY'), 10010, '64-XC-89');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2021', 'DD.MM.YYYY'), to_date(12.04.2021', 'DD.MM.YYYY'), 10010, '10-MN-34');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 10000, '10-RR-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('31.04.2021', 'DD.MM.YYYY'), 10010, '99-AR-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2021', 'DD.MM.YYYY'), to_date(12.04.2021', 'DD.MM.YYYY'), 10010, '68-AB-40');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 10000, '12-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('31.04.2021', 'DD.MM.YYYY'), 10010, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2021', 'DD.MM.YYYY'), to_date(12.04.2021', 'DD.MM.YYYY'), 10010, '64-AA-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 10000, '12-PP-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('31.04.2021', 'DD.MM.YYYY'), 10010, '12-AY-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2021', 'DD.MM.YYYY'), to_date(12.04.2021', 'DD.MM.YYYY'), 10010, '12-YH-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2021', 'DD.MM.YYYY'), to_date('31.06.2021', 'DD.MM.YYYY'), 10008, '12-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2021', 'DD.MM.YYYY'), to_date('31.10.2021', 'DD.MM.YYYY'), 10015, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.05.2021', 'DD.MM.YYYY'), to_date(12.05.2021', 'DD.MM.YYYY'), 10010, '64-AA-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 10008, '12-PP-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 10012, '12-AY-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2021', 'DD.MM.YYYY'), to_date(12.01.2021', 'DD.MM.YYYY'), 10018, '12-YH-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 10008, '12-AC-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 10012, '12-AX-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2021', 'DD.MM.YYYY'), to_date(12.01.2021', 'DD.MM.YYYY'), 10018, '12-TW-24');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-AP-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('31.04.2022', 'DD.MM.YYYY'), 10010, '64-XC-89');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2022', 'DD.MM.YYYY'), to_date(12.04.2022', 'DD.MM.YYYY'), 10010, '10-MN-34');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '10-RR-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('31.04.2022', 'DD.MM.YYYY'), 10010, '99-AR-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2022', 'DD.MM.YYYY'), to_date(12.04.2022', 'DD.MM.YYYY'), 10010, '68-AB-40');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('31.04.2022', 'DD.MM.YYYY'), 10010, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.04.2022', 'DD.MM.YYYY'), to_date(12.04.2022', 'DD.MM.YYYY'), 10010, '64-AA-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-PP-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('31.04.2022', 'DD.MM.YYYY'), 10010, '12-AY-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2022', 'DD.MM.YYYY'), to_date(12.04.2022', 'DD.MM.YYYY'), 10010, '12-YH-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2022', 'DD.MM.YYYY'), to_date('31.06.2022', 'DD.MM.YYYY'), 10008, '12-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2022', 'DD.MM.YYYY'), to_date('31.10.2022', 'DD.MM.YYYY'), 10015, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.05.2022', 'DD.MM.YYYY'), to_date(12.05.2022', 'DD.MM.YYYY'), 10010, '64-AA-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 10008, '12-PP-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 10012, '12-AY-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2022', 'DD.MM.YYYY'), to_date(12.01.2022', 'DD.MM.YYYY'), 10018, '12-YH-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 10008, '12-AC-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 10012, '12-AX-35');
+insert into alugueres values(refer_aluguer.nextval, to_date(02.01.2022', 'DD.MM.YYYY'), to_date(12.01.2022', 'DD.MM.YYYY'), 10018, '12-TW-24');
 
 
 

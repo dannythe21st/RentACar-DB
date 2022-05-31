@@ -101,7 +101,6 @@ create table carros(
     modelo varchar2(30),
     nomeCat varchar2(15),
     nomeFilial varchar2(20),
-    alugado int,
     primary key (matricula),
     foreign key (nomeCat) references categorias(nomeCat),
     foreign key (nomeFilial) references filiais(nomeFilial)
@@ -235,12 +234,14 @@ increment by 1;
 drop sequence make_refer_aluguer;
 
 create sequence make_numcliente
-start with numeric(00000,0)
+start with 00000
 increment by 1
-minvalue 0000;
+minvalue 00000;
+
+drop sequence make_numcliente;
 
 create sequence make_numinterno
-start with numeric(0000,0)
+start with 0000
 increment by 1
 minvalue 0000;
 
@@ -300,9 +301,11 @@ create or replace trigger new_numCliente
     before insert on alugueres
     for each row
     begin
-        select make_numcliente.nextval
-        into :new.numcliente
-        from dual;
+        if(:new.numCliente is null) then
+            select make_numcliente.nextval
+            into :new.numcliente
+            from dual;
+        end if;
     end;
 /   
 
@@ -310,9 +313,11 @@ create or replace trigger new_referencia
     before insert on alugueres
     for each row
     begin
+        if(:new.referencia is null) then 
         select make_refer_aluguer.nextval
         into :new.referencia
         from dual;
+        end if;
     end;
 /   
 
@@ -320,9 +325,11 @@ create or replace trigger new_numInterno
     before insert on vendedores
     for each row
     begin
+        if(:new.numInterno is null) then 
         select make_numinterno.nextval
         into :new.numInterno
         from dual;
+        end if;
     end;
 /   
 
