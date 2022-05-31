@@ -297,7 +297,7 @@ drop trigger aplica_desconto;
 --Triggers para as sequencias
 
 create or replace trigger new_numCliente
-    before insert on alugueres
+    before insert on clientes
     for each row
     begin
         if(:new.numCliente is null) then
