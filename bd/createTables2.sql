@@ -150,8 +150,19 @@ create or replace view v_clientes as
 
 
 create or replace view v_vendedores as
-    select nif, nomepessoa, morada, numInterno 
+    select nif, nomepessoa, morada, numInterno, salario, numVendas, nomeFilial
     from pessoas natural inner join vendedores;
+
+
+create or replace view v_particulares as
+    select nif, nomepessoa, morada, numCliente, pontos
+    from pessoas natural inner join particulares;
+
+
+create or replace view v_empresariais as
+    select nif, nomepessoa, morada, numCliente, maxAlugueres
+    from pessoas natural inner join empresariais;
+
 
         ----triggers clientes----
 
@@ -163,7 +174,7 @@ create or replace trigger ins_v_clientes
         (:new.nif, :new.nomepessoa, :new.morada);
         insert into clientes (nif,numCliente) values (:new.nif, null);
     end;
-/    
+/      
 
 create or replace trigger up_v_clientes
     instead of update on v_clientes
@@ -186,7 +197,46 @@ create or replace trigger del_v_clientes
         delete from pessoas where nif = :old.nif;
     end;
 /
-            
+
+            ----triggers particulares----
+
+create or replace trigger ins_v_particulares
+    instead of insert on v_particulares
+    for each row
+    begin
+        insert into clientes(nif, numCliente) values
+        (:new.nif, null);
+        insert into particulares (numCliente, pontos) values (null, null);
+    end;
+/  
+
+create or replace trigger del_v_particulares
+    instead of delete on v_particulares
+    for each row
+    begin
+        delete from clientes where numCliente = :old.numCliente;
+    end;
+/
+
+            ----triggers empresariais----
+
+create or replace trigger ins_v_pempresariais
+    instead of insert on v_empresariais
+    for each row
+    begin
+        insert into clientes(nif, numCliente) values
+        (:new.nif, null);
+        insert into empresariais (numCliente, maxAlugueres) values (null, null);
+    end;
+/  
+
+create or replace trigger del_v_empresariais
+    instead of delete on v_empresariais
+    for each row
+    begin
+        delete from clientes where numCliente = :old.numCliente;
+    end;
+/            
             ----triggers vendedores----
 
 create or replace trigger ins_v_vendedores
@@ -195,8 +245,8 @@ create or replace trigger ins_v_vendedores
     begin
         insert into pessoas(nif,nomepessoa,morada) values
         (:new.nif, :new.nomepessoa, :new.morada);
-        insert into vendedores (nif,numInterno) values 
-        (:new.nif, null);
+        insert into vendedores (nif,numInterno, salario, numVendas, nomeFilial) values 
+        (:new.nif, null, null, null, :new.nomeFilial);
     end;
 / 
 
@@ -286,13 +336,19 @@ create or replace trigger adiciona_pontos
 /    
 drop trigger adiciona_pontos; 
 
---Um cliente particular recebe 5% de desconto a cada 1500 pontos
-create or replace trigger aplica_desconto
+
+create or replace trigger salary_bump
+    after insert on 
         
 
 
+/
 
-drop trigger aplica_desconto;
+create or replace trigger maxAlugueres_bumb
+
+
+/
+
 
 --Triggers para as sequencias
 
@@ -333,4 +389,45 @@ create or replace trigger new_numInterno
     end;
 /   
 
-drop trigger new_numInterno;
+--Triggers definir constantes
+
+create or replace trigger set_salario
+    before insert on vendedores
+    for each row
+    begin  
+        if(:new.salario is null) then
+        :new.salario := 1200;
+        end if;
+    end;
+/
+
+create or replace trigger set_numVendas
+    before insert on vendedores
+    for each row
+    begin  
+        if(:new.numVendas is null) then
+        :new.numVendas := 0;
+        end if;
+    end;
+/
+
+create or replace trigger set_pontos
+    before insert on particulares
+    for each row
+    begin  
+        if(:new.pontos is null) then
+        :new.pontos := 0;
+        end if;
+    end;
+/
+
+create or replace trigger set_maxAlugueres
+    before insert on empresariais
+    for each row
+    begin  
+        if(:new.maxAlugueres is null) then
+        :new.maxAlugueres := 7;
+        end if;
+    end;
+/
+
