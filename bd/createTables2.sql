@@ -144,6 +144,88 @@ create table faz(
     primary key (nif, referencia)
 );
 
+---------------------------------VIEWS---------------------------------
+
+create or replace view v_clientes as
+    select nif, nomepessoa, morada, numCliente 
+    from pessoas natural inner join clientes;
+
+
+create or replace view v_vendedores as
+    select nif, nomepessoa, morada, numInterno 
+    from pessoas natural inner join vendedores;
+
+        ----triggers clientes----
+
+create or replace trigger ins_v_clientes
+    instead of insert on v_clientes
+    for each row
+    begin
+        insert into pessoas(nif,nomepessoa,morada) values
+        (:new.nif, :new.nomepessoa, :new.morada);
+        insert into cliente (nif,numCliente) values (:new.nif, :new.numCliente);
+    end;
+/    
+
+create or replace trigger up_v_clientes
+    instead of update on v_clientes
+    for each row
+    begin
+        update pessoas set
+            nomepessoa = :new.nomepessoa,
+            morada = :new.morada
+            where nif = :new.nif;
+        update clientes set
+            numCliente = :new.numCliente
+            where nif = :new.nif;
+    end;
+/
+
+create or replace trigger del_v_clientes
+    instead of delete on v_clientes
+    for each row
+    begin
+        delete from pessoas where nif = :old.nif;
+    end;
+/
+            
+            ----triggers vendedores----
+
+create or replace trigger ins_v_vendedores
+    instead of insert on v_vendedores
+    for each row
+    begin
+        insert into pessoas(nif,nomepessoa,morada) values
+        (:new.nif, :new.nomepessoa, :new.morada);
+        insert into vendedores (nif,numInterno) values 
+        (:new.nif, :new.numCliente);
+    end;
+/ 
+
+create or replace trigger up_v_vendedores
+    instead of update on v_vendedores
+    for each row
+    begin
+        update pessoas set
+            nomepessoa = :new.nomepessoa,
+            morada = :new.morada
+            where nif = :new.nif;
+        update vendedores set
+            numInterno = :new.numInterno
+            where nif = :new.nif;
+    end;
+/
+
+create or replace trigger del_v_vendedores
+    instead of delete on v_vendedores
+    for each row
+    begin
+        delete from pessoas where nif = :new.nif;
+    end;
+/
+
+
+
 ---------------------------------SEQUENCIAS---------------------------------
 
 create sequence make_refer_aluguer
