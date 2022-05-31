@@ -30,42 +30,38 @@ drop sequence make_numinterno;
 create table pessoas(
     nif varchar2(9),
     nomepessoa varchar2(35),
-    morada varchar2(50)
+    morada varchar2(50),
+    primary key (nif)
 );
-alter table pessoas add constraint pk_pess primary key(nif);
-
 
 ---------------------------------CLIENTES---------------------------------
 
 create table clientes(
     nif varchar2(9),
-    numCliente int  
+    numCliente int,
+    unique (numCliente),
+    foreign key (nif) references pessoas(nif)
 );
-alter table clientes add constraint un_clientes unique (numCliente);
-alter table clientes add constraint fk_clientespess foreign key (nif) references pessoas(nif);
-
 
 ---------------------------------PARTICULARES---------------------------------
         
 create table particulares(
     numCliente int,
-    pontos int
+    pontos int,
+    unique (numCliente),
+    foreign key (numCliente) references clientes(numCliente)
 );
-alter table particulares add constraint un_part unique(numCliente);
-alter table particulares add constraint fk_partclientes foreign key (numCliente) references clientes(numCliente);
-
 
 ---------------------------------EMPRESARIAIS---------------------------------
     
 create table empresariais(
     numCliente int,
     maxAlugueres int,
-    numAlugueres int
+    numAlugueres int,
+    unique(numCliente),
+    foreign key (numCliente) references clientes(numCliente)
 );
-alter table empresariais add constraint un_empre unique(numCliente);
-alter table empresariais add constraint fk_empresclientes foreign key (numCliente) references clientes(numCliente);
-    
-    
+      
 ---------------------------------VENDEDORES---------------------------------
 
 create table vendedores(
@@ -73,18 +69,18 @@ create table vendedores(
     numInterno int,
     salario int,
     numVendas int,
-    nomeFilial varchar2(20)
+    nomeFilial varchar2(20),
+    unique (numInterno),
+    foreign key (nif) references pessoas(nif),
+    foreign key (nomeFilial) references filiais(nomeFilial)
 );
-alter table vendedores add constraint un_vendedores unique (numInterno);
-alter table vendedores add constraint fk_vendedoresPessoas foreign key (nif) references pessoas(nif);
-alter table vendedores add constraint fk_vendedoresFilial foreign key (nomeFilial) references filiais(nomeFilial);
 
 ---------------------------------FILIAIS---------------------------------
 
 create table filiais(
-    nomeFilial varchar2(20)
+    nomeFilial varchar2(20),
+    primary key (nomeFilial)
 );
-alter table filiais add constraint pk_filiais primary key (nomeFilial);
 
 ---------------------------------CARROS---------------------------------
 
@@ -95,19 +91,19 @@ create table carros(
     modelo varchar2(30),
     nomeCat varchar2(15),
     nomeFilial varchar2(20),
-    alugado int
+    alugado int,
+    primary key (matricula),
+    foreign key (nomeCat) references categorias(nomeCat),
+    foreign key (nomeFilial) references filiais(nomeFilial)
 );
-alter table carros add constraint pk_carros primary key (matricula);
-alter table carros add constraint fk_carroscat foreign key (nomeCat) references categorias(nomeCat);
-alter table carros add constraint fk_carrosfiliais foreign key (nomeFilial) references filiais(nomeFilial);
 
 ---------------------------------CATEGORIAS---------------------------------
 
 create table categorias(
     nomeCat varchar2(15),
-    precoCat int 
+    precoCat int,
+    primary key (nomeCat)
 );
-alter table categorias add constraint pk_categ primary key (nomeCat);
 
 ---------------------------------ALUGUERES---------------------------------
 
@@ -116,46 +112,45 @@ create table alugueres(
     dataI date,
     dataF date,
     numCliente int,
-    matricula varchar2(8)
+    matricula varchar2(8),
+    primary key (referencia),
+    foreign key (numCliente) references clientes(numCliente),
+    foreign key (matricula) references carros(matricula)
 );
-alter table alugueres add constraint pk_alugueres primary key (referencia);
-alter table alugueres add constraint fk_alugueresclientes foreign key (numCliente) references clientes(numCliente);
-alter table alugueres add constraint fk_aluguerescarros foreign key (matricula) references carros(matricula);
 
 ---------------------------------EXTRAS---------------------------------
 
 create table extras(
     nomeExtra varchar2(30),
-    precoExtra float
+    precoExtra float,
+    primary key (nomeExtra)
 );
-alter table extras add constraint pk_extras primary key (nomeExtra);
 
 ---------------------------------POSSUI---------------------------------
 
 create table possui(
     referencia int,
-    nomeExtra varchar2(20)
+    nomeExtra varchar2(20),
+    primary key (referencia, nomeExtra)
 );
-alter table possui add constraint pk_possui primary key (referencia, nomeExtra);
 
 ---------------------------------FAZ---------------------------------
 
 create table faz(
     nif varchar2(9),
-    referencia int
+    referencia int,
+    primary key (nif, referencia)
 );
-alter table faz add constraint pk_faz primary key (nif, referencia);
-
 
 ---------------------------------SEQUENCIAS---------------------------------
 
 create sequence make_refer_aluguer
-start with 00000
+start with 1000
 increment by 1
 minvalue 0;
 
 create sequence make_numcliente
-start with 1000
+start with 10000
 increment by 1;
 
 create sequence make_numinterno
