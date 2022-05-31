@@ -64,6 +64,21 @@ create table empresariais(
     foreign key (numCliente) references clientes(numCliente)
 );
       
+---------------------------------CATEGORIAS---------------------------------
+
+create table categorias(
+    nomeCat varchar2(15),
+    precoCat int,
+    primary key (nomeCat)
+);
+
+---------------------------------FILIAIS---------------------------------
+
+create table filiais(
+    nomeFilial varchar2(20),
+    primary key (nomeFilial)
+);
+      
 ---------------------------------VENDEDORES---------------------------------
 
 create table vendedores(
@@ -75,13 +90,6 @@ create table vendedores(
     unique (numInterno),
     foreign key (nif) references pessoas(nif),
     foreign key (nomeFilial) references filiais(nomeFilial)
-);
-
----------------------------------FILIAIS---------------------------------
-
-create table filiais(
-    nomeFilial varchar2(20),
-    primary key (nomeFilial)
 );
 
 ---------------------------------CARROS---------------------------------
@@ -97,14 +105,6 @@ create table carros(
     primary key (matricula),
     foreign key (nomeCat) references categorias(nomeCat),
     foreign key (nomeFilial) references filiais(nomeFilial)
-);
-
----------------------------------CATEGORIAS---------------------------------
-
-create table categorias(
-    nomeCat varchar2(15),
-    precoCat int,
-    primary key (nomeCat)
 );
 
 ---------------------------------ALUGUERES---------------------------------
@@ -163,7 +163,7 @@ create or replace trigger ins_v_clientes
     begin
         insert into pessoas(nif,nomepessoa,morada) values
         (:new.nif, :new.nomepessoa, :new.morada);
-        insert into cliente (nif,numCliente) values (:new.nif, :new.numCliente);
+        insert into clientes (nif,numCliente) values (:new.nif, :new.numCliente);
     end;
 /    
 
@@ -198,7 +198,7 @@ create or replace trigger ins_v_vendedores
         insert into pessoas(nif,nomepessoa,morada) values
         (:new.nif, :new.nomepessoa, :new.morada);
         insert into vendedores (nif,numInterno) values 
-        (:new.nif, :new.numCliente);
+        (:new.nif, :new.numInterno);
     end;
 / 
 
