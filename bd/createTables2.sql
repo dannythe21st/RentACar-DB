@@ -147,8 +147,10 @@ create table faz(
 ---------------------------------SEQUENCIAS---------------------------------
 
 create sequence make_refer_aluguer
-start with concat('REF', 1000)
+start with 1000
 increment by 1;
+
+drop sequence make_refer_aluguer;
 
 create sequence make_numcliente
 start with numeric(00000,0)
