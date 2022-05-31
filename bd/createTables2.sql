@@ -95,6 +95,7 @@ create table carros(
     modelo varchar2(30),
     nomeCat varchar2(15),
     nomeFilial varchar2(20)
+    alugado int;
 );
 alter table carros add constraint pk_carros primary key (matricula);
 alter table carros add constraint fk_carroscat foreign key (nomeCat) references categorias(nomeCat);
@@ -196,26 +197,26 @@ drop trigger adiciona_aluguer_ativo;
 create or replace trigger adiciona_pontos
     after insert on alugueres
     for each row
-    declare pontos number;
-    declare numCliente number;
-    declare dataDiff number;
+    declare precoCat number; dataDiff number;
     begin
-        select precoCat as dailyFee, dataI - dataF as dataDiff, precoCat as preco 
-            from alugueres inner join carros using (matricula)  
-            where (numCliente = :new.numCliente);
-        update particulares set pontos = pontos + (dataDiff * preco * 0.05);
+        select precoCat, (dataF - dataI) into dataDiff
+        from alugueres inner join carros using (matricula)
+                       inner join categorias using (nomeCat);
+        update particulares set pontos = (pontos + (dataDiff * precoCat * 0.05))
+        where (numCliente = :new.numCliente);
     end;    
 /    
- 
-
+drop trigger adiciona_pontos;
 
 --Um cliente particular recebe 5% de desconto a cada 1500 pontos
-create or replace trigger faz_desconto
-    
+create or replace trigger aplica_desconto
+        
 
 
 
 
 
+
+drop trigger aplica_desconto;
 
 
