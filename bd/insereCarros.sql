@@ -101,22 +101,24 @@ insert into v_clientes values (100000087, 'SUSANA', 'RUA SESAMO 87', null);
 insert into v_clientes values (100000088, 'NAZARE', 'RUA SESAMO 88', null);
 insert into v_clientes values (100000089, 'FABIO', 'RUA SESAMO 89', null);
 insert into v_clientes values (100000090, 'TELMO', 'RUA SESAMO 90', null);
-insert into v_vendedores values (100000091, null, null, null, 'LEANDRO', 'RUA SESAMO 91', null);
-insert into v_vendedores values (100000092, 'CIDALIA', 'RUA SESAMO 92', null);
-insert into v_vendedores values (100000093, 'ROSALINA', 'RUA SESAMO 93', null);
-insert into v_vendedores values (100000094, 'GEDSON', 'RUA SESAMO 94', null);
-insert into v_vendedores values (100000095, 'AMILCAR', 'RUA SESAMO 95', null);
-insert into v_vendedores values (100000096, 'BRUNO', 'RUA SESAMO 96', null);
-insert into v_vendedores values (100000097, 'BRUNA', 'RUA SESAMO 97', null);
-insert into v_vendedores values (100000098, 'TATIANA', 'RUA SESAMO 98', null);
-insert into v_vendedores values (100000099, 'LILIANA', 'RUA SESAMO 99', null);
-insert into v_vendedores values (100000100, 'VITORIA', 'RUA SESAMO 100', null);
-insert into v_vendedores values (100000101, 'MARISOL', 'RUA SESAMO 101', null);
-insert into v_vendedores values (100000102, 'ROGERIO', 'RUA SESAMO 102', null);
-insert into v_vendedores values (100000103, 'SEBASTIAO', 'RUA SESAMO 103', null);
-insert into v_vendedores values (100000104, 'ANGELO', 'RUA SESAMO 104', null);
-insert into v_vendedores values (100000105, 'ANGELA', 'RUA SESAMO 105', null);
+insert into v_vendedores values (100000091, 'LEANDRO', 'RUA SESAMO 91', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000092, 'CIDALIA', 'RUA SESAMO 92', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000093, 'ROSALINA', 'RUA SESAMO 93', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000094, 'GEDSON', 'RUA SESAMO 94', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000095, 'AMILCAR', 'RUA SESAMO 95', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000096, 'BRUNO', 'RUA SESAMO 96', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000097, 'BRUNA', 'RUA SESAMO 97', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000098, 'TATIANA', 'RUA SESAMO 98', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000099, 'LILIANA', 'RUA SESAMO 99', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000100, 'VITORIA', 'RUA SESAMO 100', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000101, 'MARISOL', 'RUA SESAMO 101', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000102, 'ROGERIO', 'RUA SESAMO 102', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000103, 'SEBASTIAO', 'RUA SESAMO 103', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000104, 'ANGELO', 'RUA SESAMO 104', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000105, 'ANGELA', 'RUA SESAMO 105', null, null, null, 'SINTRA');
 
+select * from clientes inner join pessoas using (nif);
+select * from vendedores inner join pessoas using (nif);
 
 ---------------------------------EXTRAS---------------------------------
 
@@ -298,47 +300,50 @@ insert into carros values ('12-AR-35', 2003, 'PEUGEOT', '108', 'ECONOMICO', 'MAT
 insert into carros values ('12-AX-35', 2005, 'SMART', 'FORTWO', 'ECONOMICO', 'MATOSINHOS');
 insert into carros values ('12-AC-35', 2018, 'DACIA', 'DUSTER STEPWAY', 'ECONOMICO', 'CASCAIS');
 
+select * from clientes;
 
 ----------------------------------ALUGUER---------------------------------
 
-insert into alugueres values(null,to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 10000, '12-AB-34');
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10003, '12-LL-65');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '64-KL-35');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10017, '12-AB-14');
+insert into alugueres values (null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 0, '12-AB-34');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10004, '12-AR-35');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10014, '14-AB-34');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10016, '12-WH-35');
+insert into alugueres values(null,to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 1, '12-AB-34');
+insert into alugueres values(make_refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 2, '12-LL-65');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 3, '64-KL-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 4, '12-AB-14');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10002, '12-AB-35');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10007, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10008, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 5, '12-AR-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 6, '14-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 7, '12-WH-35');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10009, '10-MN-34');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-TT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10012, '10-FD-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 2, '12-AB-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 7, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 8, '64-AA-35');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2020', 'DD.MM.YYYY'), to_date('31.06.2020', 'DD.MM.YYYY'), 10008, '11-XL-87');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2020', 'DD.MM.YYYY'), to_date('31.10.2020', 'DD.MM.YYYY'), 10015, '10-RR-34');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.05.2020', 'DD.MM.YYYY'), to_date('12.05.2020', 'DD.MM.YYYY'), 10010, '64-BM-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 9, '10-MN-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 0, '12-TT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 12, '10-FD-34');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10008, '12-GG-24');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 10012, '19-XB-87');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 10018, '10-AS-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.06.2020', 'DD.MM.YYYY'), to_date('31.06.2020', 'DD.MM.YYYY'), 8, '11-XL-87');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.10.2020', 'DD.MM.YYYY'), to_date('31.10.2020', 'DD.MM.YYYY'), 15, '10-RR-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.05.2020', 'DD.MM.YYYY'), to_date('12.05.2020', 'DD.MM.YYYY'), 10, '64-BM-35');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-AP-35');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '64-XC-89');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10010, '10-MN-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 08, '12-GG-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 2, '19-XB-87');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 18, '10-AS-34');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '10-RR-34');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '99-AR-35');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10010, '68-AB-40');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 00, '12-AP-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10, '64-XC-89');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 0, '10-MN-34');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-AB-34');
-insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-RT-24');
-insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10010, '64-AA-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 005, '10-RR-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10, '99-AR-35');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 16, '68-AB-40');
 
-insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 10000, '12-PP-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 89, '12-AB-34');
+insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10, '12-RT-24');
+insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 17, '64-AA-35');
+
+insert into alugueres values(refer_aluguer.nextval, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 67, '12-PP-24');
 insert into alugueres values(refer_aluguer.nextval, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('31.04.2020', 'DD.MM.YYYY'), 10010, '12-AY-35');
 insert into alugueres values(refer_aluguer.nextval, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 10010, '12-YH-35');
 
@@ -457,6 +462,8 @@ insert into vendedores values(100000088, make_numinterno.nextval, 1300, 'TAVIRA'
 select marca, modelo, nomefilial from carros
 where marca = 'PORSCHE' and anoprod > 2016
 order by nomefilial;
+
+select * from carros;
 
 ----------------PESSOA----------------
 

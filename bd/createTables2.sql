@@ -357,9 +357,6 @@ create or replace trigger new_numCliente
     for each row
     begin
         if(:new.numCliente is null) then
-            --select make_numcliente.nextval
-            --into :new.numcliente
-            --from dual;
             :new.numCliente := make_numcliente.nextval;
         end if;
     end;
@@ -370,9 +367,7 @@ create or replace trigger new_referencia
     for each row
     begin
         if(:new.referencia is null) then 
-        select make_refer_aluguer.nextval
-        into :new.referencia
-        from dual;
+        :new.referencia := make_refer_aluguer.nextval;
         end if;
     end;
 /   
