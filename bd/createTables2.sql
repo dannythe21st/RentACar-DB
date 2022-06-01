@@ -9,7 +9,6 @@ drop table clientes cascade constraints;
 drop table particulares cascade constraints;
 drop table empresariais cascade constraints;
 drop table vendedores cascade constraints;
-drop table gerentes cascade constraints;
 drop table filiais cascade constraints;
 drop table carros cascade constraints;
 drop table categorias cascade constraints;
@@ -316,9 +315,9 @@ create or replace trigger ins_v_vendedores
     for each row
     begin
         insert into pessoas(nif,nomepessoa,morada) values
-        (:new.nif, :new.nomepessoa, :new.morada);
-        insert into vendedores (nif,numInterno, salario, numVendas, nomeFilial) values 
-        (:new.nif, null, null, null, :new.nomeFilial);
+            (:new.nif, :new.nomepessoa, :new.morada);
+        insert into vendedores (nif, numInterno, salario, numVendas, nomeFilial) values 
+            (:new.nif, null, null, null, :new.nomeFilial);
     end;
 / 
 
@@ -327,11 +326,11 @@ create or replace trigger up_v_vendedores
     for each row
     begin
         update pessoas set
-            nomepessoa = :new.nomepessoa,
             morada = :new.morada
             where nif = :new.nif;
         update vendedores set
-            numInterno = :new.numInterno
+            salario = :new.salario,
+            nomeFilial = :new.nomeFilial
             where nif = :new.nif;
     end;
 /
@@ -352,14 +351,10 @@ create sequence make_refer_aluguer
 start with 1000
 increment by 1;
 
-drop sequence make_refer_aluguer;
-
 create sequence make_numcliente
 start with 00000
 increment by 1
 minvalue 00000;
-
-drop sequence make_numcliente;
 
 create sequence make_numinterno
 start with 0000
@@ -475,10 +470,8 @@ create or replace trigger new_numInterno
     before insert on vendedores
     for each row
     begin
-        if(:new.numInterno is null) then 
-        select make_numinterno.nextval
-        into :new.numInterno
-        from dual;
+       if(:new.numInterno is null) then
+       :new.numInterno := make_numInterno.nextval;
         end if;
     end;
 /   

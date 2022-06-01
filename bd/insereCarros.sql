@@ -24,9 +24,22 @@ select * from clientes;
 select * from particulares;
 select * from empresariais;
 
----------------------------------PESSOAS---------------------------------
+---------------------------------FILIAIS---------------------------------
 
---TESTAR PARA V_PARTICULARES, V_EMPRESARIAIS E V_FUNCIONARIOS
+insert into filiais values ('CASCAIS');
+insert into filiais values ('SINTRA');
+insert into filiais values ('BENFICA');
+insert into filiais values ('FUNCHAL');
+insert into filiais values ('PORTIMAO');
+insert into filiais values ('TAVIRA');
+insert into filiais values ('COIMBRA');
+insert into filiais values ('FAMALICAO');
+insert into filiais values ('ESTORIL');
+insert into filiais values ('MATOSINHOS');
+insert into filiais values ('CASTELO BRANCO');
+insert into filiais values ('BEJA');
+
+---------------------------------PESSOAS---------------------------------
 
 insert into v_clientes_particulares values (100000000, 'DANIEL', 'RUA SESAMO 1', null, null);
 insert into v_clientes_particulares values (100000001, 'JOAO', 'RUA SESAMO 2', null, null);
@@ -104,23 +117,23 @@ insert into v_clientes_particulares values (100000072, 'MONICA', 'RUA SESAMO 73'
 insert into v_clientes_particulares values (100000073, 'NUNO', 'RUA SESAMO 74', null, null);
 insert into v_clientes_particulares values (100000074, 'FREDERICO', 'RUA SESAMO 75', null, null);
 insert into v_clientes_particulares values (100000075, 'SIMAO', 'RUA SESAMO 75', null, null);
-insert into v_clientes_empresariais values (100000076, 'JAIME', 'RUA SESAMO 76', null);
-insert into v_clientes_empresariais values (100000077, 'ALEXANDRE', 'RUA SESAMO 77', null);
-insert into v_clientes_empresariais values (100000078, 'DINIS', 'RUA SESAMO 78', null);
-insert into v_clientes_empresariais values (100000079, 'GUILHERME', 'RUA SESAMO 79', null);
-insert into v_clientes_empresariais values (100000080, 'PEDRO', 'RUA SESAMO 80', null);
-insert into v_clientes_empresariais values (100000081, 'DORA', 'RUA SESAMO 81', null);
-insert into v_clientes_empresariais values (100000082, 'RUTE', 'RUA SESAMO 82', null);
-insert into v_clientes_empresariais values (100000083, 'SONIA', 'RUA SESAMO 83', null);
-insert into v_clientes_empresariais values (100000084, 'ENZO', 'RUA SESAMO 84', null);
-insert into v_clientes_empresariais values (100000085, 'CRISTAL', 'RUA SESAMO 85', null);
-insert into v_clientes_empresariais values (100000086, 'ADOLFO', 'RUA SESAMO 86', null);
-insert into v_clientes_empresariais values (100000087, 'SUSANA', 'RUA SESAMO 87', null);
-insert into v_clientes_empresariais values (100000088, 'NAZARE', 'RUA SESAMO 88', null);
-insert into v_clientes_empresariais values (100000089, 'FABIO', 'RUA SESAMO 89', null);
-insert into v_clientes_empresariais values (100000090, 'TELMO', 'RUA SESAMO 90', null);
+insert into v_clientes_empresariais values (100000076, 'JAIME', 'RUA SESAMO 76', null, null, null);
+insert into v_clientes_empresariais values (100000077, 'ALEXANDRE', 'RUA SESAMO 77', null, null, null);
+insert into v_clientes_empresariais values (100000078, 'DINIS', 'RUA SESAMO 78', null, null, null);
+insert into v_clientes_empresariais values (100000079, 'GUILHERME', 'RUA SESAMO 79', null, null, null);
+insert into v_clientes_empresariais values (100000080, 'PEDRO', 'RUA SESAMO 80', null, null, null);
+insert into v_clientes_empresariais values (100000081, 'DORA', 'RUA SESAMO 81', null, null, null);
+insert into v_clientes_empresariais values (100000082, 'RUTE', 'RUA SESAMO 82', null, null, null);
+insert into v_clientes_empresariais values (100000083, 'SONIA', 'RUA SESAMO 83', null, null, null);
+insert into v_clientes_empresariais values (100000084, 'ENZO', 'RUA SESAMO 84', null, null, null);
+insert into v_clientes_empresariais values (100000085, 'CRISTAL', 'RUA SESAMO 85', null, null, null);
+insert into v_clientes_empresariais values (100000086, 'ADOLFO', 'RUA SESAMO 86', null, null, null);
+insert into v_clientes_empresariais values (100000087, 'SUSANA', 'RUA SESAMO 87', null, null, null);
+insert into v_clientes_empresariais values (100000088, 'NAZARE', 'RUA SESAMO 88', null, null, null);
+insert into v_clientes_empresariais values (100000089, 'FABIO', 'RUA SESAMO 89', null, null, null);
+insert into v_clientes_empresariais values (100000090, 'TELMO', 'RUA SESAMO 90', null, null, null);
 insert into v_vendedores values (100000091, 'LEANDRO', 'RUA SESAMO 91', null, null, null, 'SINTRA'); 
-insert into v_vendedores values (100000092, 'CIDALIA', 'RUA SESAMO 92', null, null, null, 'SINTRA');
+insert into v_vendedores values (100000092, 'CIDALIA', 'RUA SESAMO 92', 100, null, null, 'SINTRA');
 insert into v_vendedores values (100000093, 'ROSALINA', 'RUA SESAMO 93', null, null, null, 'SINTRA');
 insert into v_vendedores values (100000094, 'GEDSON', 'RUA SESAMO 94', null, null, null, 'SINTRA');
 insert into v_vendedores values (100000095, 'AMILCAR', 'RUA SESAMO 95', null, null, null, 'SINTRA');
@@ -135,6 +148,8 @@ insert into v_vendedores values (100000103, 'SEBASTIAO', 'RUA SESAMO 103', null,
 insert into v_vendedores values (100000104, 'ANGELO', 'RUA SESAMO 104', null, null, null, 'SINTRA');
 insert into v_vendedores values (100000105, 'ANGELA', 'RUA SESAMO 105', null, null, null, 'SINTRA');
 
+
+select * from pessoas;
 select * from clientes inner join pessoas using (nif);
 select * from vendedores inner join pessoas using (nif);
 
@@ -151,20 +166,7 @@ insert into categorias values ('LUXO', 550);
 insert into categorias values ('ECONOMICO', 175);
 insert into categorias values ('UTILITARIO', 395);
 
----------------------------------FILIAIS---------------------------------
 
-insert into filiais values ('CASCAIS');
-insert into filiais values ('SINTRA');
-insert into filiais values ('BENFICA');
-insert into filiais values ('FUNCHAL');
-insert into filiais values ('PORTIMAO');
-insert into filiais values ('TAVIRA');
-insert into filiais values ('COIMBRA');
-insert into filiais values ('FAMALICAO');
-insert into filiais values ('ESTORIL');
-insert into filiais values ('MATOSINHOS');
-insert into filiais values ('CASTELO BRANCO');
-insert into filiais values ('BEJA');
 
 ---------------------------------CARROS---------------------------------
 
@@ -322,7 +324,13 @@ select * from clientes;
 
 ----------------------------------ALUGUER---------------------------------
 
-insert into alugueres values (null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 0, '12-AB-34',1);
+select * from alugueres;
+select * from vendedores;
+select * from clientes;
+
+--TESTE DATAS
+insert into alugueres values (null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 191, '12-AB-34',59);
+insert into alugueres values (null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 190, '12-AB-34',58);
 
 insert into alugueres values(null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 1, '12-AB-34',1);
 insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 2, '12-LL-65',2);
