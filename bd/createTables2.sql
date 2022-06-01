@@ -109,13 +109,15 @@ create table carros(
 
 create table alugueres(
     referencia varchar2(20),
-    dataI date,
-    dataF date,
+    dataI date not null,
+    dataF date not null,
     numCliente int,
     matricula varchar2(8),
+    numInterno int,
     primary key (referencia),
     foreign key (numCliente) references clientes(numCliente),
-    foreign key (matricula) references carros(matricula)
+    foreign key (matricula) references carros(matricula),
+    foreign key (numInterno) references vendedores(numInterno)
 );
 
 ---------------------------------EXTRAS---------------------------------
@@ -132,14 +134,6 @@ create table possui(
     referencia int,
     nomeExtra varchar2(20),
     primary key (referencia, nomeExtra)
-);
-
----------------------------------FAZ---------------------------------
-
-create table faz(
-    nif varchar2(9),
-    referencia int,
-    primary key (nif, referencia)
 );
 
 ---------------------------------VIEWS---------------------------------
