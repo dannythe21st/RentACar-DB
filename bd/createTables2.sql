@@ -147,6 +147,8 @@ create table faz(
 /*create or replace view v_clientes as
     select nif, nomepessoa, morada, numCliente 
     from pessoas natural inner join clientes;*/
+    
+    drop view v_clientes;
 
         ----VIEW VENDEDORES----
 create or replace view v_vendedores as
@@ -171,7 +173,7 @@ create or replace view v_clientes_particulares as
         
         ----TRIGGERS CLIENTES EMPRESARIAIS----
 
-        create or replace trigger ins_v_clientes_empresariais as
+create or replace trigger ins_v_clientes_empresariais
     instead of insert on v_clientes_empresariais
     for each row
     begin
@@ -180,10 +182,9 @@ create or replace view v_clientes_particulares as
         insert into clientes (nif,numCliente) values 
             (:new.nif, null);
         insert into empresariais(numCliente, maxAlugueres, numAlugueres) values
-            (null, null, null);
+            ((select max(numCliente) from clientes), null, null);
     end;
 /
-
 
 create or replace trigger up_v_clientes_empresariais
     instead of update on v_clientes_empresariais
@@ -209,7 +210,7 @@ create or replace trigger del_v_clientes_empresariais
 
         ----TRIGGERS CLIENTES PARTICULARES----
 
-create or replace trigger ins_v_clientes_particulares as
+create or replace trigger ins_v_clientes_particulares
     instead of insert on v_clientes_particulares
     for each row
     begin
@@ -218,7 +219,7 @@ create or replace trigger ins_v_clientes_particulares as
         insert into clientes (nif,numCliente) values 
             (:new.nif, null);
         insert into particulares(numCliente, pontos) values
-            (null, null);
+            ((select max(numCliente) from clientes), null);
     end;
 /
 
@@ -518,3 +519,12 @@ create or replace trigger set_maxAlugueres
     end;
 /   
 
+create or replace trigger set_numAlugueres
+    before insert on empresariais
+    for each row
+    begin  
+        if(:new.numAlugueres is null) then
+        :new.numAlugueres := 0;
+        end if;
+    end;
+/ 

@@ -1,10 +1,26 @@
 delete from pessoas;
 delete from carros;
 delete from filiais;
+delete from clientes;
+delete from empresariais;
+delete from particulares;
+
+
 
 ---------------------------------INSERTS---------------------------------
 
+insert into v_clientes_particulares values (127926604, 'ARNALDO', 'RUA MARIA MATOS', null, null);
+insert into v_clientes_empresariais values (127926404, 'PPPRRRR', 'YAS', null, null,null);
+insert into v_clientes_empresariais values (127926401, 'SIIIUU', 'YES', null, null,null);
 
+
+select * from pessoas
+order by nomepessoa;
+
+select * from clientes;
+
+select * from particulares;
+select * from empresariais;
 
 ---------------------------------PESSOAS---------------------------------
 
