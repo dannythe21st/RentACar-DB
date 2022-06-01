@@ -30,7 +30,7 @@ drop sequence make_numinterno;
 
 create table pessoas(
     nif varchar2(9),
-    nomepessoa varchar2(35),
+    nomepessoa varchar2(35) not null,
     morada varchar2(50),
     primary key (nif)
 );
@@ -85,7 +85,7 @@ create table vendedores(
     numInterno int,
     salario int,
     numVendas int,
-    nomeFilial varchar2(20),
+    nomeFilial varchar2(20) not null,
     unique (numInterno),
     foreign key (nif) references pessoas(nif),
     foreign key (nomeFilial) references filiais(nomeFilial)
@@ -95,11 +95,11 @@ create table vendedores(
 
 create table carros(
     matricula varchar2(8),
-    anoProd smallint,
-    marca varchar2(15),
-    modelo varchar2(30),
-    nomeCat varchar2(15),
-    nomeFilial varchar2(20),
+    anoProd smallint not null,
+    marca varchar2(15) not null,
+    modelo varchar2(30) not null,
+    nomeCat varchar2(15) not null,
+    nomeFilial varchar2(20) not null,
     primary key (matricula),
     foreign key (nomeCat) references categorias(nomeCat),
     foreign key (nomeFilial) references filiais(nomeFilial)
