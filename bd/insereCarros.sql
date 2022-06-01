@@ -435,9 +435,6 @@ select * from alugueres;
 
 ---------------------------------CLIENTES PARTICULARES--------------------------
 
-insert into particulares values(10001, 0);
-insert into particulares values(25 0);
-insert into particulares values(10002, 0);
 
 
 ---------------------------------CLIENTES EMPRESARIAIS--------------------------

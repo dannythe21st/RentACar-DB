@@ -431,7 +431,7 @@ create or replace trigger esta_alugado
 
 
 create or replace trigger salary_bump
-    after insert on 
+    after insert on alugueres
         
 
 
