@@ -426,3 +426,21 @@ create or replace trigger set_maxAlugueres
     end;
 /
 
+create or replace trigger esta_alugado
+    before insert on alugueres
+        for each row
+        declare aux number;
+        begin
+            select count (*) into aux 
+            from alugueres where (matricula = :new.matricula and (
+                (dataI <= :new.dataI and :new.dataF <= dataF) or -- novo esta contido num ja existente
+                (:new.dataI <= dataI and dataF <= :new.dataF) or -- novo contem um ja existente completamente
+                (:new.dataI <= dataI and dataF <= :new.dataF) or -- o fim do novo calha a meio doutro aluguer existentes
+                (dataI <= :new.dataI and dataF <= :new.dataF)    -- o inicio do novo esta a meio dum existente
+                ));
+            if(aux > 0)    
+                then Raise_Application_Error (-20100, 'O carro nao esta disponivel nestes dias :C Por favor escolha outro carro.');
+            end if;
+        end;
+/        
+
