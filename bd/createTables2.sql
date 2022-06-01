@@ -144,29 +144,104 @@ create table faz(
 
 ---------------------------------VIEWS---------------------------------
 
-create or replace view v_clientes as
+/*create or replace view v_clientes as
     select nif, nomepessoa, morada, numCliente 
-    from pessoas natural inner join clientes;
+    from pessoas natural inner join clientes;*/
 
-
+        ----VIEW VENDEDORES----
 create or replace view v_vendedores as
     select nif, nomepessoa, morada, numInterno, salario, numVendas, nomeFilial
     from pessoas natural inner join vendedores;
 
+        ----VIEW CLIENTES EMPRESARIAIS----
 
-create or replace view v_particulares as
+create or replace view v_clientes_empresariais as
+    select nif, nomepessoa, morada, numCliente, maxAlugueres, numAlugueres
+    from pessoas natural inner join clientes
+                 natural inner join empresariais;
+
+        ----VIEW CLIENTES PARTICULARES----
+
+create or replace view v_clientes_particulares as
     select nif, nomepessoa, morada, numCliente, pontos
-    from pessoas natural inner join particulares;
+    from pessoas natural inner join clientes
+                 natural inner join particulares;
 
 
-create or replace view v_empresariais as
-    select nif, nomepessoa, morada, numCliente, maxAlugueres
-    from pessoas natural inner join empresariais;
+        
+        ----TRIGGERS CLIENTES EMPRESARIAIS----
+
+        create or replace trigger ins_v_clientes_empresariais as
+    instead of insert on v_clientes_empresariais
+    for each row
+    begin
+        insert into pessoas(nif,nomepessoa,morada) values
+            (:new.nif, :new.nomepessoa, :new.morada);
+        insert into clientes (nif,numCliente) values 
+            (:new.nif, null);
+        insert into empresariais(numCliente, maxAlugueres, numAlugueres) values
+            (null, null, null);
+    end;
+/
 
 
-        ----triggers clientes----
+create or replace trigger up_v_clientes_empresariais
+    instead of update on v_clientes_empresariais
+    for each row
+    begin
+        update pessoas set
+            morada = :new.morada
+            where nif = :new.nif;
+        update empresariais set
+            maxAlugueres = :new.maxAlugueres,
+            numAlugueres = : new.numAlugueres
+            where numCliente = :new.numCliente;
+    end;
+/
 
-create or replace trigger ins_v_clientes
+create or replace trigger del_v_clientes_empresariais
+    instead of delete on v_clientes_empresariais
+    for each row
+    begin
+        delete from pessoas where nif = :old.nif;
+    end;
+/
+
+        ----TRIGGERS CLIENTES PARTICULARES----
+
+create or replace trigger ins_v_clientes_particulares as
+    instead of insert on v_clientes_particulares
+    for each row
+    begin
+        insert into pessoas(nif,nomepessoa,morada) values
+            (:new.nif, :new.nomepessoa, :new.morada);
+        insert into clientes (nif,numCliente) values 
+            (:new.nif, null);
+        insert into particulares(numCliente, pontos) values
+            (null, null);
+    end;
+/
+
+create or replace trigger up_v_clientes_particulares
+    instead of update on v_clientes_particulares
+    for each row
+    begin
+        update pessoas set
+            morada = :new.morada
+            where nif = :new.nif;
+    end;
+/
+
+create or replace trigger del_v_clientes_particulares
+    instead of delete on v_clientes_particulares
+    for each row
+    begin
+        delete from pessoas where nif = :old.nif;
+    end;
+/
+
+
+/*create or replace trigger ins_v_clientes
     instead of insert on v_clientes
     for each row
     begin
@@ -236,8 +311,10 @@ create or replace trigger del_v_empresariais
     begin
         delete from clientes where numCliente = :old.numCliente;
     end;
-/            
-            ----triggers vendedores----
+/   */         
+
+
+            ----TRIGGERS VENDEDORES----
 
 create or replace trigger ins_v_vendedores
     instead of insert on v_vendedores
