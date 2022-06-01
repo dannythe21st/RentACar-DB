@@ -422,13 +422,27 @@ create or replace trigger esta_alugado
         end;
 /     
 
-
+create or replace trigger adiciona_numalugueres
+    after insert on alugueres
+    for each row
+    begin
+        update vendedores set numVendas = numVendas + 1 
+        where (numInterno = :new.numInterno);
+    end;     
+/
 
 create or replace trigger salary_bump
     after insert on alugueres
-        
-
-
+    for each row
+    declare dummy int;
+    begin
+        select count(*) into dummy
+        from alugueres
+        where numInterno = :new.numInterno;
+        if(dummy > 0 and mod(50, dummy) = 0) then
+            update vendedores set salario = salario + (salario*0.05);
+        end if;
+    end;
 /
 
 create or replace trigger maxAlugueres_bumb
