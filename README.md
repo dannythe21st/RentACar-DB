@@ -1,3 +1,3 @@
 # CollegeWork
-Small projects for practice purposes.
-Also for messing around with git :D
+Crippling depression powered by college
+:'D
