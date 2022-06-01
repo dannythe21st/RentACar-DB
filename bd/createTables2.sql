@@ -204,7 +204,7 @@ create or replace trigger ins_v_particulares
     instead of insert on v_particulares
     for each row
     begin
-        insert into clientes(nif, numCliente) values
+        insert into ins_v_clientes(nif, numCliente) values
         (:new.nif, null);
         insert into particulares (numCliente, pontos) values (null, null);
     end;
@@ -310,8 +310,6 @@ create or replace trigger verifica_limite_alugueres
   end;
 /
 
-drop trigger verifica_limite_alugueres;
-
 --Acrescenta um novo aluguer ativo ao counter dum cliente empresarial
 create or replace trigger adiciona_aluguer_ativo
     after insert on alugueres
@@ -323,8 +321,6 @@ create or replace trigger adiciona_aluguer_ativo
     end;    
 /        
 
-drop trigger adiciona_aluguer_ativo;
-
 --Um cliente particular recebe 5% do valor total dos alugueres em pontos
 create or replace trigger adiciona_pontos
     after insert on alugueres
@@ -334,7 +330,26 @@ create or replace trigger adiciona_pontos
         where (numCliente = :new.numCliente);
     end;    
 /    
-drop trigger adiciona_pontos; 
+
+-- Verifica se um carro ja esta alugado nuns dados dias 
+create or replace trigger esta_alugado
+    before insert on alugueres
+        for each row
+        declare aux number;
+        begin
+            select count (*) into aux 
+            from alugueres where (matricula = :new.matricula and (
+                (dataI <= :new.dataI and :new.dataF <= dataF) or -- novo esta contido num ja existente
+                (:new.dataI <= dataI and dataF <= :new.dataF) or -- novo contem um ja existente completamente
+                (:new.dataI <= dataI and dataF <= :new.dataF) or -- o fim do novo calha a meio doutro aluguer existentes
+                (dataI <= :new.dataI and dataF <= :new.dataF)    -- o inicio do novo esta a meio dum existente
+                ));
+            if(aux > 0)    
+                then Raise_Application_Error (-20100, 'O carro nao esta disponivel nestes dias :C Por favor escolha outro carro.');
+            end if;
+        end;
+/     
+
 
 
 create or replace trigger salary_bump
@@ -350,7 +365,7 @@ create or replace trigger maxAlugueres_bumb
 /
 
 
---Triggers para as sequencias
+        ----Triggers para as sequencias----
 
 create or replace trigger new_numCliente
     before insert on clientes
@@ -424,23 +439,5 @@ create or replace trigger set_maxAlugueres
         :new.maxAlugueres := 7;
         end if;
     end;
-/
-
-create or replace trigger esta_alugado
-    before insert on alugueres
-        for each row
-        declare aux number;
-        begin
-            select count (*) into aux 
-            from alugueres where (matricula = :new.matricula and (
-                (dataI <= :new.dataI and :new.dataF <= dataF) or -- novo esta contido num ja existente
-                (:new.dataI <= dataI and dataF <= :new.dataF) or -- novo contem um ja existente completamente
-                (:new.dataI <= dataI and dataF <= :new.dataF) or -- o fim do novo calha a meio doutro aluguer existentes
-                (dataI <= :new.dataI and dataF <= :new.dataF)    -- o inicio do novo esta a meio dum existente
-                ));
-            if(aux > 0)    
-                then Raise_Application_Error (-20100, 'O carro nao esta disponivel nestes dias :C Por favor escolha outro carro.');
-            end if;
-        end;
-/        
+/   
 
