@@ -4,6 +4,8 @@ delete from filiais;
 delete from clientes;
 delete from empresariais;
 delete from particulares;
+delete from alugueres;
+delete from vendedores;
 
 
 
@@ -428,8 +430,13 @@ insert into alugueres values(null, to_date('28.03.2022', 'DD.MM.YYYY'), to_date(
 insert into alugueres values(null, to_date('02.01.2022', 'DD.MM.YYYY'), to_date('12.01.2022', 'DD.MM.YYYY'), 20, '12-YH-35',2);
 
 insert into alugueres values(null, to_date('29.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 66, '12-AC-35',5);
-insert into alugueres values(null, to_date('28.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 2, '12-AX-35',7);
+insert into alugueres values(null, to_date('28.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 2, '12-AX-35',3);
 insert into alugueres values(null, to_date('02.01.2022', 'DD.MM.YYYY'), to_date('12.01.2022', 'DD.MM.YYYY'), 20, '12-TW-24',3);
+
+insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',0);
+insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',0);
+
+select * from vendedores;
 
 select * from alugueres;
 

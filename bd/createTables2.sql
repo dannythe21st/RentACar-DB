@@ -411,6 +411,7 @@ create or replace trigger esta_alugado
         begin
             select count (*) into aux 
             from alugueres where (matricula = :new.matricula and (
+                (dataI = :new.dataI or dataF = :new.dataF)    or -- um dos dias coincide
                 (dataI <= :new.dataI and :new.dataF <= dataF) or -- novo esta contido num ja existente
                 (:new.dataI <= dataI and dataF <= :new.dataF) or -- novo contem um ja existente completamente
                 (:new.dataI <= dataI and dataF <= :new.dataF) or -- o fim do novo calha a meio doutro aluguer existentes
@@ -422,7 +423,7 @@ create or replace trigger esta_alugado
         end;
 /     
 
-create or replace trigger adiciona_numalugueres
+create or replace trigger adiciona_numvendas
     after insert on alugueres
     for each row
     begin
@@ -431,21 +432,18 @@ create or replace trigger adiciona_numalugueres
     end;     
 /
 
+/*drop trigger adiciona_numvendas;
+
 create or replace trigger salary_bump
     after insert on alugueres
     for each row
-    declare dummy int;
     begin
-        select count(*) into dummy
-        from alugueres
-        where numInterno = :new.numInterno;
-        if(dummy > 0 and mod(50, dummy) = 0) then
-            update vendedores set salario = salario + (salario*0.05);
-        end if;
+            update vendedores set salario = salario + (salario*0.05)
+            where numInterno = :new.numInterno and numVendas > 0 and mod(numVendas,50) = 0;
     end;
-/
+/*/
 
-create or replace trigger maxAlugueres_bumb
+create or replace trigger maxAlugueres_bump
 
 
 /
