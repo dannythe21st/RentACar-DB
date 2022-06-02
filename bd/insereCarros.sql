@@ -271,8 +271,11 @@ insert into carros values ('12-QQ-24', 2022, 'TESLA', 'MODEL 3 PERFORMANCE', 'LU
 insert into carros values ('64-FD-78', 2022, 'MINI', 'CLUBMAN JCW', 'LUXO', 'ESTORIL');
 insert into carros values ('17-AA-34', 2022, 'TOYOTA', 'SUPRA', 'LUXO', 'FUNCHAL');
 insert into carros values ('12-HB-89', 2020, 'HONDA', 'NSX', 'NORMAL', 'BEJA');
+insert into carros values ('21-AA-21', 2020, 'RIMAC', 'NEVERA', 'LUXO', 'CASCAIS');
 
+COMMIT;
     ------UTILITARIO------
+    
 
 insert into carros values ('76-AD-35', 2021, 'FORD', 'TRANSIT', 'UTILITARIO', 'CASCAIS');
 insert into carros values ('31-AN-35', 2021, 'FORD', 'RANGER', 'UTILITARIO', 'SINTRA');
@@ -440,6 +443,8 @@ insert into alugueres values(null, to_date('02.01.2022', 'DD.MM.YYYY'), to_date(
 
 insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',0);
 insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',0);
+
+insert into alugueres values(null, to_date('19.04.2022', 'DD.MM.YYYY'), to_date('25.04.2022', 'DD.MM.YYYY'), 91, '20-FR-30',0);
 
 commit;
 

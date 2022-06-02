@@ -349,14 +349,14 @@ create or replace trigger esta_alugado
         end;
 /     
 
-/*create or replace trigger adiciona_numvendas
+create or replace trigger adiciona_numvendas
     after insert on alugueres
     for each row
     begin
         update vendedores set numVendas = numVendas + 1 
         where (numInterno = :new.numInterno);
     end;     
-/*/
+/
 
 --drop trigger adiciona_numvendas;
 
