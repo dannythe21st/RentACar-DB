@@ -19,7 +19,7 @@ drop sequence make_refer_aluguer;
 drop sequence make_numcliente;
 drop sequence make_numinterno;
 
-
+rollback;
 ---------------------------------CRIACAO TABELAS---------------------------------
 
 ---------------------------------PESSOAS---------------------------------
@@ -232,78 +232,8 @@ create or replace trigger del_v_clientes_particulares
 /
 
 
-/*create or replace trigger ins_v_clientes
-    instead of insert on v_clientes
-    for each row
-    begin
-        insert into pessoas(nif,nomepessoa,morada) values
-        (:new.nif, :new.nomepessoa, :new.morada);
-        insert into clientes (nif,numCliente) values (:new.nif, null);
-    end;
-/      
-
-create or replace trigger up_v_clientes
-    instead of update on v_clientes
-    for each row
-    begin
-        update pessoas set
-            nomepessoa = :new.nomepessoa,
-            morada = :new.morada
-            where nif = :new.nif;
-        update clientes set
-            numCliente = :new.numCliente
-            where nif = :new.nif;
-    end;
-/
-
-create or replace trigger del_v_clientes
-    instead of delete on v_clientes
-    for each row
-    begin
-        delete from pessoas where nif = :old.nif;
-    end;
-/
-
-            ----triggers particulares----
-
-create or replace trigger ins_v_particulares
-    instead of insert on v_particulares
-    for each row
-    begin
-        insert into ins_v_clientes(nif, numCliente) values
-        (:new.nif, null);
-        insert into particulares (numCliente, pontos) values (null, null);
-    end;
-/  
-
-create or replace trigger del_v_particulares
-    instead of delete on v_particulares
-    for each row
-    begin
-        delete from clientes where numCliente = :old.numCliente;
-    end;
-/
-
-            ----triggers empresariais----
-
-create or replace trigger ins_v_pempresariais
-    instead of insert on v_empresariais
-    for each row
-    begin
-        insert into clientes(nif, numCliente) values
-        (:new.nif, null);
-        insert into empresariais (numCliente, maxAlugueres) values (null, null);
-    end;
-/  
-
-create or replace trigger del_v_empresariais
-    instead of delete on v_empresariais
-    for each row
-    begin
-        delete from clientes where numCliente = :old.numCliente;
-    end;
-/   */         
-
+drop view v_empresariais;
+drop view v_particulares;
 
             ----TRIGGERS VENDEDORES----
 
@@ -450,19 +380,27 @@ create or replace trigger salary_bump
 create or replace trigger new_numCliente
     before insert on clientes
     for each row
+    declare numC int;
     begin
         if(:new.numCliente is null) then
-            :new.numCliente := make_numcliente.nextval;
+            select make_numcliente.nextval
+            into numC
+            from dual;
+           :new.numCliente := numC;
         end if;
     end;
 /   
 
+
 create or replace trigger new_referencia
     before insert on alugueres
     for each row
+    declare refe int;
     begin
         if(:new.referencia is null) then 
-        :new.referencia := make_refer_aluguer.nextval;
+        select make_refer_aluguer.nextval into refe
+        from dual;
+        :new.referencia := refe;
         end if;
     end;
 /   
@@ -470,9 +408,12 @@ create or replace trigger new_referencia
 create or replace trigger new_numInterno
     before insert on vendedores
     for each row
+    declare nI int;
     begin
        if(:new.numInterno is null) then
-       :new.numInterno := make_numInterno.nextval;
+       select make_numInterno.nextval into nI
+       from dual;
+       :new.numInterno := nI;
         end if;
     end;
 /   
@@ -530,6 +471,5 @@ create or replace trigger set_numAlugueres
     end;
 /
 
-        
         
         

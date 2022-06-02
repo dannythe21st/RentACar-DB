@@ -11,14 +11,8 @@ drop sequence make_refer_aluguer;
 drop sequence make_numCliente;
 drop sequence make_numInterno;
 
-commit;
 
 ---------------------------------INSERTS---------------------------------
-
-insert into v_clientes_particulares values (127926604, 'ARNALDO', 'RUA MARIA MATOS', null, null);
-insert into v_clientes_empresariais values (127926404, 'PPPRRRR', 'YAS', null, null,null);
-insert into v_clientes_empresariais values (127926401, 'SIIIUU', 'YES', null, null,null);
-
 
 select * from pessoas
 order by nomepessoa;
@@ -27,7 +21,8 @@ select * from clientes;
 
 select * from particulares;
 select * from empresariais;
-
+select * from vendedores;
+insert into v_vendedores values (100023366, 'cristiano', 'madeira', null, null, null, 'BEJA');
 ---------------------------------FILIAIS---------------------------------
 
 insert into filiais values ('CASCAIS');
@@ -157,7 +152,8 @@ insert into v_vendedores values (100000102, 'ROGERIO', 'RUA SESAMO 102', null, n
 insert into v_vendedores values (100000103, 'SEBASTIAO', 'RUA SESAMO 103', null, null, null, 'SINTRA');
 insert into v_vendedores values (100000104, 'ANGELO', 'RUA SESAMO 104', null, null, null, 'SINTRA');
 insert into v_vendedores values (100000105, 'ANGELA', 'RUA SESAMO 105', null, null, null, 'SINTRA');
-
+insert into v_vendedores values (100000106, 'SERGIO', 'RUA SESAMO 106', null, null, null, 'CASCAIS');
+commit;
 
 
 
@@ -173,8 +169,6 @@ insert into categorias values ('NORMAL', 365);
 insert into categorias values ('LUXO', 550);
 insert into categorias values ('ECONOMICO', 175);
 insert into categorias values ('UTILITARIO', 395);
-
-
 
 ---------------------------------CARROS---------------------------------
 
@@ -457,6 +451,7 @@ select * from pessoas;
 select * from clientes;
 select * from particulares;
 select * from empresariais;
+select * from vendedores;
 select * from carros;
 select * from filiais;
 select * from categorias;
