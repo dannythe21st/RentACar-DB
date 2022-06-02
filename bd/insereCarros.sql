@@ -1,13 +1,17 @@
+delete from vendedores;
+delete from empresariais;
+delete from particulares;
+delete from clientes;
 delete from pessoas;
 delete from carros;
 delete from filiais;
-delete from clientes;
-delete from empresariais;
-delete from particulares;
 delete from alugueres;
-delete from vendedores;
 
+drop sequence make_refer_aluguer;
+drop sequence make_numCliente;
+drop sequence make_numInterno;
 
+commit;
 
 ---------------------------------INSERTS---------------------------------
 
@@ -39,7 +43,7 @@ insert into filiais values ('MATOSINHOS');
 insert into filiais values ('CASTELO BRANCO');
 insert into filiais values ('BEJA');
 
----------------------------------PESSOAS---------------------------------
+---------------------------------CLIENTES PARTICULARES--------------------------
 
 insert into v_clientes_particulares values (100000000, 'DANIEL', 'RUA SESAMO 1', null, null);
 insert into v_clientes_particulares values (100000001, 'JOAO', 'RUA SESAMO 2', null, null);
@@ -117,6 +121,9 @@ insert into v_clientes_particulares values (100000072, 'MONICA', 'RUA SESAMO 73'
 insert into v_clientes_particulares values (100000073, 'NUNO', 'RUA SESAMO 74', null, null);
 insert into v_clientes_particulares values (100000074, 'FREDERICO', 'RUA SESAMO 75', null, null);
 insert into v_clientes_particulares values (100000075, 'SIMAO', 'RUA SESAMO 75', null, null);
+
+---------------------------------CLIENTES EMPRESARIAIS--------------------------
+
 insert into v_clientes_empresariais values (100000076, 'JAIME', 'RUA SESAMO 76', null, null, null);
 insert into v_clientes_empresariais values (100000077, 'ALEXANDRE', 'RUA SESAMO 77', null, null, null);
 insert into v_clientes_empresariais values (100000078, 'DINIS', 'RUA SESAMO 78', null, null, null);
@@ -132,6 +139,9 @@ insert into v_clientes_empresariais values (100000087, 'SUSANA', 'RUA SESAMO 87'
 insert into v_clientes_empresariais values (100000088, 'NAZARE', 'RUA SESAMO 88', null, null, null);
 insert into v_clientes_empresariais values (100000089, 'FABIO', 'RUA SESAMO 89', null, null, null);
 insert into v_clientes_empresariais values (100000090, 'TELMO', 'RUA SESAMO 90', null, null, null);
+
+---------------------------------VENDEDORES---------------------------------
+
 insert into v_vendedores values (100000091, 'LEANDRO', 'RUA SESAMO 91', null, null, null, 'SINTRA'); 
 insert into v_vendedores values (100000092, 'CIDALIA', 'RUA SESAMO 92', 100, null, null, 'SINTRA');
 insert into v_vendedores values (100000093, 'ROSALINA', 'RUA SESAMO 93', null, null, null, 'SINTRA');
@@ -149,9 +159,7 @@ insert into v_vendedores values (100000104, 'ANGELO', 'RUA SESAMO 104', null, nu
 insert into v_vendedores values (100000105, 'ANGELA', 'RUA SESAMO 105', null, null, null, 'SINTRA');
 
 
-select * from pessoas;
-select * from clientes inner join pessoas using (nif);
-select * from vendedores inner join pessoas using (nif);
+
 
 ---------------------------------EXTRAS---------------------------------
 
@@ -249,8 +257,8 @@ insert into carros values ('64-XC-89', 2019, 'FORD', 'MUSTANG', 'LUXO', 'ESTORIL
 insert into carros values ('64-XC-89', 1967, 'FORD', 'MUSTANG SHELBY', 'LUXO', 'ESTORIL');
 insert into carros values ('10-VV-34', 2021, 'BENTLEY', 'CONTINETAL GT', 'LUXO', 'SINTRA');
 insert into carros values ('10-JK-31', 2021, 'BENTLYEY', 'FLYING SPUR', 'LUXO', 'ESTORIL');
-insert into carros values ('11-XB-34', 2022, 'lAMBORGHINI', 'HURACAN EVO', 'LUXO', 'BEJA');
-insert into carros values ('31-XB-34', 2022, 'lAMBORGHINI', 'URUS', 'LUXO', 'ESTORIL');
+insert into carros values ('11-XB-34', 2022, 'LAMBORGHINI', 'HURACAN EVO', 'LUXO', 'BEJA');
+insert into carros values ('31-XB-34', 2022, 'LAMBORGHINI', 'URUS', 'LUXO', 'ESTORIL');
 insert into carros values ('11-XB-87', 2014, 'MASERATI', 'GHIBLI', 'LUXO', 'ESTORIL');
 insert into carros values ('41-XB-87', 2014, 'MASERATI', 'QUATTROPORTE', 'LUXO', 'ESTORIL');
 insert into carros values ('11-XB-87', 2017, 'MASERATI', 'LEVANTE', 'LUXO', 'ESTORIL');
@@ -320,13 +328,8 @@ insert into carros values ('12-AR-35', 2003, 'PEUGEOT', '108', 'ECONOMICO', 'MAT
 insert into carros values ('12-AX-35', 2005, 'SMART', 'FORTWO', 'ECONOMICO', 'MATOSINHOS');
 insert into carros values ('12-AC-35', 2018, 'DACIA', 'DUSTER STEPWAY', 'ECONOMICO', 'CASCAIS');
 
-select * from clientes;
 
 ----------------------------------ALUGUER---------------------------------
-
-select * from alugueres;
-select * from vendedores;
-select * from clientes;
 
 --TESTE DATAS
 insert into alugueres values (null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 191, '12-AB-34',59);
@@ -355,7 +358,7 @@ insert into alugueres values(null, to_date('02.05.2020', 'DD.MM.YYYY'), to_date(
 
 insert into alugueres values(null, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 08, '12-GG-24',6);
 insert into alugueres values(null, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 2, '19-XB-87',6);
-insert into alugueres values(null, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 18, '10-AS-34',6);
+insert into alugueres values(null, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 12, '10-AS-34',6);
 
 insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 00, '12-AP-35',7);
 insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 10, '64-XC-89',7);
@@ -444,39 +447,10 @@ insert into alugueres values(null, to_date('02.01.2022', 'DD.MM.YYYY'), to_date(
 insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',0);
 insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',0);
 
-select * from vendedores;
-
-select * from alugueres;
-
----------------------------------CLIENTES PARTICULARES--------------------------
-
-
-
----------------------------------CLIENTES EMPRESARIAIS--------------------------
-
-
-
----------------------------------VENDEDORES---------------------------------
-
-
-
+commit;
 
 
 ---------------------------------CONSULTAS---------------------------------
-
-
-----------------CARROS----------------
-
-select marca, modelo, nomefilial from carros
-where marca = 'PORSCHE' and anoprod > 2016
-order by nomefilial;
-
-select * from carros;
-
-----------------PESSOA----------------
-
-select nomePessoa, morada
-from pessoas;
 
 ----------------GERAIS----------------
 
@@ -489,6 +463,10 @@ select * from filiais;
 select * from categorias;
 select * from alugueres;
 
+
+select * from pessoas;
+select * from clientes inner join pessoas using (nif);
+select * from vendedores inner join pessoas using (nif);
 
 
 

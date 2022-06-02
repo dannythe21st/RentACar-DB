@@ -346,6 +346,10 @@ create or replace trigger del_v_vendedores
 
 
 ---------------------------------SEQUENCIAS---------------------------------
+drop sequence make_refer_aluguer;
+drop sequence make_numcliente;
+drop sequence make_numinterno;
+
 
 create sequence make_refer_aluguer
 start with 1000
@@ -476,6 +480,7 @@ create or replace trigger new_numInterno
     end;
 /   
 
+
 --Triggers definir constantes
 
 create or replace trigger set_salario
@@ -526,4 +531,8 @@ create or replace trigger set_numAlugueres
         :new.numAlugueres := 0;
         end if;
     end;
-/ 
+/
+
+        
+        
+        
