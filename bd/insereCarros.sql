@@ -468,7 +468,17 @@ select * from pessoas;
 select * from clientes inner join pessoas using (nif);
 select * from vendedores inner join pessoas using (nif);
 
+--testes datas
+    --intervalo igual CHECK
+    --new < origin + new < origin CHECK
+    --origin < new + origin < new CHECK
+    --origin < new + new < origin CHECK
+    --new < origin + origin < new CHECK
 
+insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '17-AT-34',0); --original
+delete from alugueres where matricula = '17-AT-34' and dataI = to_date('01.04.2022', 'DD.MM.YYYY');
+insert into alugueres values(null, to_date('01.04.2022', 'DD.MM.YYYY'), to_date('11.04.2022', 'DD.MM.YYYY'), 25, '17-AT-34',13);
+insert into alugueres values(null, to_date('01.04.2022', 'DD.MM.YYYY'), to_date('13.04.2022', 'DD.MM.YYYY'), 25, '17-AT-34',13);
 
 
 
