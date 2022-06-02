@@ -1,8 +1,5 @@
 -- TODO  
-    -- DEFINIR CONSTANTES COMO NUMERO MAXIMO DE ALUGUERES, PONTOS INICIAIS (0)
     -- TABELAS FAZ E POSSUI
-    -- EXTRAS
-    -- TESTAR
 
 drop table pessoas cascade constraints;
 drop table clientes cascade constraints;

@@ -449,7 +449,6 @@ insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date(
 
 commit;
 
-
 ---------------------------------CONSULTAS---------------------------------
 
 ----------------GERAIS----------------
@@ -465,7 +464,8 @@ select * from alugueres;
 
 
 select * from pessoas;
-select * from clientes inner join pessoas using (nif);
+select * from particulares inner join clientes using (numCliente)
+                           inner join pessoas using (nif);
 select * from vendedores inner join pessoas using (nif);
 
 --testes datas
