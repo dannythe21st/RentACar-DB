@@ -6,23 +6,8 @@ delete from pessoas;
 delete from carros;
 delete from filiais;
 delete from alugueres;
-
-drop sequence make_refer_aluguer;
-drop sequence make_numCliente;
-drop sequence make_numInterno;
-
-
 ---------------------------------INSERTS---------------------------------
 
-select * from pessoas
-order by nomepessoa;
-
-select * from clientes;
-
-select * from particulares;
-select * from empresariais;
-select * from vendedores;
-insert into v_vendedores values (100023366, 'cristiano', 'madeira', null, null, null, 'BEJA');
 ---------------------------------FILIAIS---------------------------------
 
 insert into filiais values ('CASCAIS');
@@ -265,7 +250,6 @@ insert into carros values ('17-AA-34', 2022, 'TOYOTA', 'SUPRA', 'LUXO', 'FUNCHAL
 insert into carros values ('12-HB-89', 2020, 'HONDA', 'NSX', 'NORMAL', 'BEJA');
 insert into carros values ('21-AA-21', 2020, 'RIMAC', 'NEVERA', 'LUXO', 'CASCAIS');
 
-COMMIT;
     ------UTILITARIO------
     
 
@@ -320,9 +304,6 @@ insert into carros values ('12-AC-35', 2018, 'DACIA', 'DUSTER STEPWAY', 'ECONOMI
 
 ----------------------------------ALUGUER---------------------------------
 
---TESTE DATAS
-select * from possui inner join alugueres using (referencia) where matricula = '87-AB-38';
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 01, '87-AB-38',1,null,'mediocre',5);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 01, '11-XG-57',1,null,'mediocre',5);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 01, '18-FH-83',1,null,'mediocre',5);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '12-AY-35',5,null,'otimo',9);
@@ -349,170 +330,3 @@ insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '64-XC-89',8,null,'bom',6);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 21, '64-CZ-35',2,null,'otimo',8);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 21, '64-KJ-35',2,null,'otimo',7);
-commit;
-select * from possui;
-
-
-
-
-
-
-
-
-
-insert into alugueres values (null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 191, '12-AB-34',59);
-insert into alugueres values (null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 190, '12-AB-34',58);
-
-insert into alugueres values(null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 1, '12-AB-34',1);
-insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 2, '12-LL-65',2);
-insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 3, '64-KL-35',2);
-insert into alugueres values(null, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 4, '12-AB-14',2);
-
-insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 5, '12-AR-35',3);
-insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 6, '14-AB-34',3);
-insert into alugueres values(null, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 7, '12-WH-35',3);
-
-insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 2, '12-AB-35',4);
-insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 7, '12-RT-24',4);
-insert into alugueres values(null, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 8, '64-AA-35',4);
-
-insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 9, '10-MN-34',5);
-insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 0, '12-TT-24',5);
-insert into alugueres values(null, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 12, '10-FD-34',5);
-
-insert into alugueres values(null, to_date('29.06.2020', 'DD.MM.YYYY'), to_date('30.06.2020', 'DD.MM.YYYY'), 8, '11-XL-87',5);
-insert into alugueres values(null, to_date('28.10.2020', 'DD.MM.YYYY'), to_date('31.10.2020', 'DD.MM.YYYY'), 15, '10-RR-34',5);
-insert into alugueres values(null, to_date('02.05.2020', 'DD.MM.YYYY'), to_date('12.05.2020', 'DD.MM.YYYY'), 10, '64-BM-35',5);
-
-insert into alugueres values(null, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 08, '12-GG-24',6);
-insert into alugueres values(null, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 2, '19-XB-87',6);
-insert into alugueres values(null, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 12, '10-AS-34',6);
-
-insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 00, '12-AP-35',7);
-insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 10, '64-XC-89',7);
-insert into alugueres values(null, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 0, '10-MN-34',7);
-
-insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 005, '10-RR-34',8);
-insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 10, '99-AR-35',8);
-insert into alugueres values(null, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 16, '68-AB-40',8);
-
-insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 89, '12-AB-34',9);
-insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 10, '12-RT-24',9);
-insert into alugueres values(null, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 17, '64-AA-35',9);
-
-insert into alugueres values(null, to_date('29.05.2020', 'DD.MM.YYYY'), to_date('31.05.2020', 'DD.MM.YYYY'), 67, '12-PP-24',10);
-insert into alugueres values(null, to_date('28.04.2020', 'DD.MM.YYYY'), to_date('30.04.2020', 'DD.MM.YYYY'), 16, '12-AY-35',10);
-insert into alugueres values(null, to_date('02.04.2020', 'DD.MM.YYYY'), to_date('12.04.2020', 'DD.MM.YYYY'), 44, '12-YH-35',10);
-
-insert into alugueres values(null, to_date('29.06.2020', 'DD.MM.YYYY'), to_date('30.06.2020', 'DD.MM.YYYY'), 57, '12-AB-34',1);
-insert into alugueres values(null, to_date('28.10.2020', 'DD.MM.YYYY'), to_date('31.10.2020', 'DD.MM.YYYY'), 12, '12-RT-24',1);
-insert into alugueres values(null, to_date('02.05.2020', 'DD.MM.YYYY'), to_date('12.05.2020', 'DD.MM.YYYY'), 54, '64-AA-35',1);
-
-insert into alugueres values(null, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 08, '12-PP-24',1);
-insert into alugueres values(null, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 78, '12-AY-35',1);
-insert into alugueres values(null, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 34, '12-YH-35',1);
-
-insert into alugueres values(null, to_date('29.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 21, '12-AC-35',1);
-insert into alugueres values(null, to_date('28.03.2020', 'DD.MM.YYYY'), to_date('31.03.2020', 'DD.MM.YYYY'), 12, '12-AX-35',1);
-insert into alugueres values(null, to_date('02.01.2020', 'DD.MM.YYYY'), to_date('12.01.2020', 'DD.MM.YYYY'), 27, '12-TW-24',1);
-
-insert into alugueres values(null, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 0, '12-AP-35',1);
-insert into alugueres values(null, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('30.04.2021', 'DD.MM.YYYY'), 23, '64-XC-89',1);
-insert into alugueres values(null, to_date('02.04.2021', 'DD.MM.YYYY'), to_date('12.04.2021', 'DD.MM.YYYY'), 55, '10-MN-34',1);
-
-insert into alugueres values(null, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 15, '10-RR-34',1);
-insert into alugueres values(null, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('30.04.2021', 'DD.MM.YYYY'), 19, '99-AR-35',1);
-insert into alugueres values(null, to_date('02.04.2021', 'DD.MM.YYYY'), to_date('12.04.2021', 'DD.MM.YYYY'), 33, '68-AB-40',1);
-
-insert into alugueres values(null, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 66, '12-AB-34',1);
-insert into alugueres values(null, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('30.04.2021', 'DD.MM.YYYY'), 32, '12-RT-24',1);
-insert into alugueres values(null, to_date('02.04.2021', 'DD.MM.YYYY'), to_date('12.04.2021', 'DD.MM.YYYY'), 21, '64-AA-35',1);
-
-insert into alugueres values(null, to_date('29.05.2021', 'DD.MM.YYYY'), to_date('31.05.2021', 'DD.MM.YYYY'), 21, '12-PP-24',1);
-insert into alugueres values(null, to_date('28.04.2021', 'DD.MM.YYYY'), to_date('30.04.2021', 'DD.MM.YYYY'), 25, '12-AY-35',1);
-insert into alugueres values(null, to_date('02.04.2021', 'DD.MM.YYYY'), to_date('12.04.2021', 'DD.MM.YYYY'), 25,'12-YH-35',1);
-
-insert into alugueres values(null, to_date('29.06.2021', 'DD.MM.YYYY'), to_date('30.06.2021', 'DD.MM.YYYY'), 66, '12-AB-34',1);
-insert into alugueres values(null, to_date('28.10.2021', 'DD.MM.YYYY'), to_date('31.10.2021', 'DD.MM.YYYY'), 61, '12-RT-24',1);
-insert into alugueres values(null, to_date('02.05.2021', 'DD.MM.YYYY'), to_date('12.05.2021', 'DD.MM.YYYY'), 25, '64-AA-35',1);
-
-insert into alugueres values(null, to_date('29.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 66, '12-PP-24',2);
-insert into alugueres values(null, to_date('28.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 2, '12-AY-35',2);
-insert into alugueres values(null, to_date('02.01.2021', 'DD.MM.YYYY'), to_date('12.01.2021', 'DD.MM.YYYY'), 20, '12-YH-35',2);
-
-insert into alugueres values(null, to_date('29.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 66, '12-AC-35',2);
-insert into alugueres values(null, to_date('28.03.2021', 'DD.MM.YYYY'), to_date('31.03.2021', 'DD.MM.YYYY'), 2, '12-AX-35',2);
-insert into alugueres values(null, to_date('02.01.2021', 'DD.MM.YYYY'), to_date('12.01.2021', 'DD.MM.YYYY'), 20, '12-TW-24',2);
-
-insert into alugueres values(null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 21, '12-AP-35',2);
-insert into alugueres values(null, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('30.04.2022', 'DD.MM.YYYY'), 25, '64-XC-89',2);
-insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '10-MN-34',2);
-
-insert into alugueres values(null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 21, '10-RR-34',4);
-insert into alugueres values(null, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('30.04.2022', 'DD.MM.YYYY'), 25, '99-AR-35',4);
-insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '68-AB-40',4);
-
-insert into alugueres values(null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 21, '12-AB-34',4);
-insert into alugueres values(null, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('30.04.2022', 'DD.MM.YYYY'), 25, '12-RT-24',4);
-insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',4);
-
-insert into alugueres values(null, to_date('29.05.2022', 'DD.MM.YYYY'), to_date('31.05.2022', 'DD.MM.YYYY'), 21, '12-PP-24',7);
-insert into alugueres values(null, to_date('28.04.2022', 'DD.MM.YYYY'), to_date('30.04.2022', 'DD.MM.YYYY'), 25, '12-AY-35',7);
-insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '12-YH-35',7);
-
-insert into alugueres values(null, to_date('29.06.2022', 'DD.MM.YYYY'), to_date('30.06.2022', 'DD.MM.YYYY'), 66, '12-AB-34',8);
-insert into alugueres values(null, to_date('28.10.2022', 'DD.MM.YYYY'), to_date('31.10.2022', 'DD.MM.YYYY'), 61, '12-RT-24',8);
-insert into alugueres values(null, to_date('02.05.2022', 'DD.MM.YYYY'), to_date('12.05.2022', 'DD.MM.YYYY'), 25, '64-AA-35',8);
-
-insert into alugueres values(null, to_date('29.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 66, '12-PP-24',2);
-insert into alugueres values(null, to_date('28.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 2, '12-AY-35',2);
-insert into alugueres values(null, to_date('02.01.2022', 'DD.MM.YYYY'), to_date('12.01.2022', 'DD.MM.YYYY'), 20, '12-YH-35',2);
-
-insert into alugueres values(null, to_date('29.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 66, '12-AC-35',5);
-insert into alugueres values(null, to_date('28.03.2022', 'DD.MM.YYYY'), to_date('31.03.2022', 'DD.MM.YYYY'), 2, '12-AX-35',3);
-insert into alugueres values(null, to_date('02.01.2022', 'DD.MM.YYYY'), to_date('12.01.2022', 'DD.MM.YYYY'), 20, '12-TW-24',3);
-
-insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',0);
-insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '64-AA-35',0);
-
-insert into alugueres values(null, to_date('19.04.2022', 'DD.MM.YYYY'), to_date('25.04.2022', 'DD.MM.YYYY'), 91, '20-FR-30',0);
-
-commit;
-
----------------------------------CONSULTAS---------------------------------
-
-----------------GERAIS----------------
-
-select * from pessoas;
-select * from clientes;
-select * from particulares;
-select * from empresariais;
-select * from vendedores;
-select * from carros;
-select * from filiais;
-select * from categorias;
-select * from alugueres;
-
-
-select * from pessoas;
-select * from particulares inner join clientes using (numCliente)
-                           inner join pessoas using (nif);
-select * from vendedores inner join pessoas using (nif);
-
---testes datas
-    --intervalo igual CHECK
-    --new < origin + new < origin CHECK
-    --origin < new + origin < new CHECK
-    --origin < new + new < origin CHECK
-    --new < origin + origin < new CHECK
-
-insert into alugueres values(null, to_date('02.04.2022', 'DD.MM.YYYY'), to_date('12.04.2022', 'DD.MM.YYYY'), 25, '17-AT-34',0); --original
-delete from alugueres where matricula = '17-AT-34' and dataI = to_date('01.04.2022', 'DD.MM.YYYY');
-insert into alugueres values(null, to_date('01.04.2022', 'DD.MM.YYYY'), to_date('11.04.2022', 'DD.MM.YYYY'), 25, '17-AT-34',13);
-insert into alugueres values(null, to_date('01.04.2022', 'DD.MM.YYYY'), to_date('13.04.2022', 'DD.MM.YYYY'), 25, '17-AT-34',13);
-
-
-select * from possui inner join alugueres using (referencia);
-
-
-
