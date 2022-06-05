@@ -321,9 +321,10 @@ insert into carros values ('12-AC-35', 2018, 'DACIA', 'DUSTER STEPWAY', 'ECONOMI
 ----------------------------------ALUGUER---------------------------------
 
 --TESTE DATAS
-select * from possui inner join alugueres using (referencia);
+select * from possui inner join alugueres using (referencia) where matricula = '87-AB-38';
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 01, '87-AB-38',1,null,'mediocre',5);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 01, '11-XG-57',1,null,'mediocre',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '21-DZ-12',8,null,'EXCELENTE',9);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 01, '18-FH-83',1,null,'mediocre',5);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '12-AY-35',5,null,'otimo',9);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 03, '18-HG-40',0,null,'bom',7);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '31-FF-35',0,null,'mediocre',5);
@@ -348,8 +349,8 @@ insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '64-XC-89',8,null,'bom',6);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 21, '64-CZ-35',2,null,'otimo',8);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 21, '64-KJ-35',2,null,'otimo',7);
-
-
+commit;
+select * from possui;
 
 
 
@@ -511,7 +512,7 @@ insert into alugueres values(null, to_date('01.04.2022', 'DD.MM.YYYY'), to_date(
 insert into alugueres values(null, to_date('01.04.2022', 'DD.MM.YYYY'), to_date('13.04.2022', 'DD.MM.YYYY'), 25, '17-AT-34',13);
 
 
-
+select * from possui inner join alugueres using (referencia);
 
 
 

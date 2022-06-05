@@ -150,8 +150,8 @@ delete from alugueres where matricula = '11-XG-57';
 
 create or replace view v_alugueres as 
     select referencia, dataI, dataF, numCliente, matricula, numInterno, idCritica, descricao, nota
-    from alugueres inner join possui using (referencia)
-                    inner join criticas using (idCritica);
+    from alugueres natural inner join possui
+                    natural inner join criticas;
                 
 create or replace trigger ins_v_alugueres
     instead of insert on v_alugueres
@@ -165,6 +165,8 @@ create or replace trigger ins_v_alugueres
             ((select max(referencia) from alugueres), (select max(idCritica) from criticas));
     end;
 /    
+
+commit;
 
 create or replace trigger up_v_alugueres
     instead of update on v_alugueres
