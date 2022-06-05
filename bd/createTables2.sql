@@ -1,25 +1,22 @@
--- TODO  
-    -- TABELAS FAZ E POSSUI
-
-drop table pessoas cascade constraints;
-drop table clientes cascade constraints;
 drop table particulares cascade constraints;
 drop table empresariais cascade constraints;
 drop table vendedores cascade constraints;
+drop table clientes cascade constraints;
+drop table pessoas cascade constraints;
 drop table filiais cascade constraints;
 drop table carros cascade constraints;
 drop table categorias cascade constraints;
 drop table alugueres cascade constraints;
-drop table extras cascade constraints;
+drop table criticas cascade constraints;
 
-drop table faz cascade constraints;
 drop table possui cascade constraints;
 
 drop sequence make_refer_aluguer;
 drop sequence make_numcliente;
 drop sequence make_numinterno;
+drop sequence make_idCritica;
 
-rollback;
+
 ---------------------------------CRIACAO TABELAS---------------------------------
 
 ---------------------------------PESSOAS---------------------------------
@@ -118,28 +115,76 @@ create table alugueres(
 
 ---------------------------------EXTRAS---------------------------------
 
-create table extras(
-    nomeExtra varchar2(30),
-    precoExtra float,
-    primary key (nomeExtra)
+create table criticas(
+    idCritica int,
+    descricao varchar2(50),
+    nota int,
+    primary key (idCritica)
 );
 
 ---------------------------------POSSUI---------------------------------
 
 create table possui(
-    referencia int,
-    nomeExtra varchar2(20),
-    primary key (referencia, nomeExtra)
+    referencia varchar2(20),
+    idCritica int,
+    foreign key (referencia) references alugueres(referencia),
+    foreign key (idCritica) references criticas(idCritica)
 );
 
 ---------------------------------VIEWS---------------------------------
+select * from vendedores;
+select * from clientes;
+select * from extras;
+insert into alugueres values (null, to_date('06.06.2022', 'DD.MM.YYYY'), to_date('15.06.2022', 'DD.MM.YYYY'), 3, '10-JK-31', 3);
+insert into alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8);
+select * from possui;
+select * from alugueres where matricula = '11-XG-57';
+select * from criticas;
+select * from alugueres where matricula =  '11-XG-57';
+delete from alugueres where matricula =  '11-XG-57';
 
-/*create or replace view v_clientes as
-    select nif, nomepessoa, morada, numCliente 
-    from pessoas natural inner join clientes;*/
-    
-    drop view v_clientes;
+delete from alugueres where matricula = '11-XG-57';
 
+create or replace view v_alugueres as 
+    select referencia, dataI, dataF, numCliente, matricula, numInterno, idCritica, descricao, nota
+    from alugueres inner join possui using (referencia)
+                    inner join criticas using (idCritica);
+                
+create or replace trigger ins_v_alugueres
+    instead of insert on v_alugueres
+    for each row
+    begin
+        insert into alugueres(referencia, dataI, dataF, numCliente, matricula, numInterno)
+            values (null, :new.dataI, :new.dataF, :new.numCliente, :new.matricula, :new.numInterno);
+        insert into criticas(idCritica, descricao, nota) values
+            (null, :new.descricao, :new.nota);
+        insert into possui(referencia, idCritica) values
+            ((select max(referencia) from alugueres), (select max(idCritica) from criticas));
+    end;
+/    
+
+create or replace trigger up_v_alugueres
+    instead of update on v_alugueres
+    for each row
+    begin
+        update criticas set
+            descricao = :new.descricao,
+            nota = :new.nota
+            where idCritica = :new.idCritica;            
+    end;
+/   
+
+create or replace trigger del_v_alugueres
+    instead of delete on v_alugueres
+    for each row
+    begin
+        delete from possui where referencia = :old.referencia and
+        idCritica = :old.idCritica;
+        delete from alugueres where referencia = :old.referencia; 
+        delete from criticas where idCritica = :old.idCritica;
+    end;
+/
+                
         ----VIEW VENDEDORES----
 create or replace view v_vendedores as
     select nif, nomepessoa, morada, numInterno, salario, numVendas, nomeFilial
@@ -231,10 +276,6 @@ create or replace trigger del_v_clientes_particulares
     end;
 /
 
-
-drop view v_empresariais;
-drop view v_particulares;
-
             ----TRIGGERS VENDEDORES----
 
 create or replace trigger ins_v_vendedores
@@ -292,6 +333,11 @@ start with 0000
 increment by 1
 minvalue 0000;
 
+create sequence make_idCritica
+start with 0000
+increment by 1
+minvalue 0000;
+
 ---------------------------------TRIGGERS---------------------------------
 
 --verifica se um cliente empresarial pode alugar mais 1 carro ou se ja chegou ao limite
@@ -344,7 +390,7 @@ create or replace trigger esta_alugado
                 (dataI <= :new.dataI and dataF <= :new.dataF)    -- o inicio do novo esta a meio dum existente
                 ));
             if(aux > 0)    
-                then Raise_Application_Error (-20100, 'O carro nao esta disponivel nestes dias :C Por favor escolha outro carro.');
+                then Raise_Application_Error (-20100, 'O carro nao esta disponivel nestes dias. Por favor escolha outro carro.');
             end if;
         end;
 /     
@@ -357,8 +403,6 @@ create or replace trigger adiciona_numvendas
         where (numInterno = :new.numInterno);
     end;     
 /
-
---drop trigger adiciona_numvendas;
 
 create or replace trigger salary_bump
     after insert on alugueres
@@ -414,6 +458,20 @@ create or replace trigger new_numInterno
        select make_numInterno.nextval into nI
        from dual;
        :new.numInterno := nI;
+        end if;
+    end;
+/   
+
+
+create or replace trigger new_idCritica
+    before insert on criticas
+    for each row
+    declare idC int;
+    begin
+       if(:new.idCritica is null) then
+       select make_idCritica.nextval into idC
+       from dual;
+       :new.idCritica := idC;
         end if;
     end;
 /   
