@@ -145,6 +145,9 @@ delete from alugueres where matricula =  '11-XG-57';
 
 delete from alugueres where matricula = '11-XG-57';
 
+
+        --------VIEW E TRIGGERS ALUGUERES--------
+
 create or replace view v_alugueres as 
     select referencia, dataI, dataF, numCliente, matricula, numInterno, idCritica, descricao, nota
     from alugueres inner join possui using (referencia)
@@ -184,29 +187,53 @@ create or replace trigger del_v_alugueres
         delete from criticas where idCritica = :old.idCritica;
     end;
 /
-                
-        ----VIEW VENDEDORES----
+
+
+        --------VIEW  E TRIGGERS VENDEDORES--------
+
 create or replace view v_vendedores as
     select nif, nomepessoa, morada, numInterno, salario, numVendas, nomeFilial
     from pessoas natural inner join vendedores;
 
-        ----VIEW CLIENTES EMPRESARIAIS----
+create or replace trigger ins_v_vendedores
+    instead of insert on v_vendedores
+    for each row
+    begin
+        insert into pessoas(nif,nomepessoa,morada) values
+            (:new.nif, :new.nomepessoa, :new.morada);
+        insert into vendedores (nif, numInterno, salario, numVendas, nomeFilial) values 
+            (:new.nif, null, null, null, :new.nomeFilial);
+    end;
+/ 
+
+create or replace trigger up_v_vendedores
+    instead of update on v_vendedores
+    for each row
+    begin
+        update pessoas set
+            morada = :new.morada
+            where nif = :new.nif;
+        update vendedores set
+            salario = :new.salario,
+            nomeFilial = :new.nomeFilial
+            where nif = :new.nif;
+    end;
+/
+
+create or replace trigger del_v_vendedores
+    instead of delete on v_vendedores
+    for each row
+    begin
+        delete from pessoas where nif = :new.nif;
+    end;
+/    
+
+        --------VIEW E TRIGGERS CLIENTES EMPRESARIAIS--------
 
 create or replace view v_clientes_empresariais as
     select nif, nomepessoa, morada, numCliente, maxAlugueres, numAlugueres
     from pessoas natural inner join clientes
                  natural inner join empresariais;
-
-        ----VIEW CLIENTES PARTICULARES----
-
-create or replace view v_clientes_particulares as
-    select nif, nomepessoa, morada, numCliente, pontos
-    from pessoas natural inner join clientes
-                 natural inner join particulares;
-
-
-        
-        ----TRIGGERS CLIENTES EMPRESARIAIS----
 
 create or replace trigger ins_v_clientes_empresariais
     instead of insert on v_clientes_empresariais
@@ -243,7 +270,13 @@ create or replace trigger del_v_clientes_empresariais
     end;
 /
 
-        ----TRIGGERS CLIENTES PARTICULARES----
+        --------VIEW E TRIGGERS CLIENTES PARTICULARES--------
+
+create or replace view v_clientes_particulares as
+    select nif, nomepessoa, morada, numCliente, pontos
+    from pessoas natural inner join clientes
+                 natural inner join particulares;
+
 
 create or replace trigger ins_v_clientes_particulares
     instead of insert on v_clientes_particulares
@@ -276,43 +309,6 @@ create or replace trigger del_v_clientes_particulares
     end;
 /
 
-            ----TRIGGERS VENDEDORES----
-
-create or replace trigger ins_v_vendedores
-    instead of insert on v_vendedores
-    for each row
-    begin
-        insert into pessoas(nif,nomepessoa,morada) values
-            (:new.nif, :new.nomepessoa, :new.morada);
-        insert into vendedores (nif, numInterno, salario, numVendas, nomeFilial) values 
-            (:new.nif, null, null, null, :new.nomeFilial);
-    end;
-/ 
-
-create or replace trigger up_v_vendedores
-    instead of update on v_vendedores
-    for each row
-    begin
-        update pessoas set
-            morada = :new.morada
-            where nif = :new.nif;
-        update vendedores set
-            salario = :new.salario,
-            nomeFilial = :new.nomeFilial
-            where nif = :new.nif;
-    end;
-/
-
-create or replace trigger del_v_vendedores
-    instead of delete on v_vendedores
-    for each row
-    begin
-        delete from pessoas where nif = :new.nif;
-    end;
-/
-
-
-
 ---------------------------------SEQUENCIAS---------------------------------
 drop sequence make_refer_aluguer;
 drop sequence make_numcliente;
@@ -339,6 +335,117 @@ increment by 1
 minvalue 0000;
 
 ---------------------------------TRIGGERS---------------------------------
+
+        ----Triggers para as sequencias----
+
+create or replace trigger new_numCliente
+    before insert on clientes
+    for each row
+    declare numC int;
+    begin
+        if(:new.numCliente is null) then
+            select make_numcliente.nextval
+            into numC
+            from dual;
+           :new.numCliente := numC;
+        end if;
+    end;
+/   
+
+
+create or replace trigger new_referencia
+    before insert on alugueres
+    for each row
+    declare refe int;
+    begin
+        if(:new.referencia is null) then 
+        select make_refer_aluguer.nextval into refe
+        from dual;
+        :new.referencia := refe;
+        end if;
+    end;
+/   
+
+create or replace trigger new_numInterno
+    before insert on vendedores
+    for each row
+    declare nI int;
+    begin
+       if(:new.numInterno is null) then
+       select make_numInterno.nextval into nI
+       from dual;
+       :new.numInterno := nI;
+        end if;
+    end;
+/   
+
+
+create or replace trigger new_idCritica
+    before insert on criticas
+    for each row
+    declare idC int;
+    begin
+       if(:new.idCritica is null) then
+       select make_idCritica.nextval into idC
+       from dual;
+       :new.idCritica := idC;
+        end if;
+    end;
+/   
+
+        ----Triggers definir valores iniciais----
+
+create or replace trigger set_salario
+    before insert on vendedores
+    for each row
+    begin  
+        if(:new.salario is null) then
+        :new.salario := 1200;
+        end if;
+    end;
+/
+
+create or replace trigger set_numVendas
+    before insert on vendedores
+    for each row
+    begin  
+        if(:new.numVendas is null) then
+        :new.numVendas := 0;
+        end if;
+    end;
+/
+
+create or replace trigger set_pontos
+    before insert on particulares
+    for each row
+    begin  
+        if(:new.pontos is null) then
+        :new.pontos := 0;
+        end if;
+    end;
+/
+
+create or replace trigger set_maxAlugueres
+    before insert on empresariais
+    for each row
+    begin  
+        if(:new.maxAlugueres is null) then
+        :new.maxAlugueres := 7;
+        end if;
+    end;
+/   
+
+create or replace trigger set_numAlugueres
+    before insert on empresariais
+    for each row
+    begin  
+        if(:new.numAlugueres is null) then
+        :new.numAlugueres := 0;
+        end if;
+    end;
+/
+
+        ----TRIGGERS COMPUTACOES----
 
 --verifica se um cliente empresarial pode alugar mais 1 carro ou se ja chegou ao limite
 create or replace trigger verifica_limite_alugueres
@@ -419,115 +526,9 @@ create or replace trigger salary_bump
 /*/
 
 
-        ----Triggers para as sequencias----
-
-create or replace trigger new_numCliente
-    before insert on clientes
-    for each row
-    declare numC int;
-    begin
-        if(:new.numCliente is null) then
-            select make_numcliente.nextval
-            into numC
-            from dual;
-           :new.numCliente := numC;
-        end if;
-    end;
-/   
 
 
-create or replace trigger new_referencia
-    before insert on alugueres
-    for each row
-    declare refe int;
-    begin
-        if(:new.referencia is null) then 
-        select make_refer_aluguer.nextval into refe
-        from dual;
-        :new.referencia := refe;
-        end if;
-    end;
-/   
 
-create or replace trigger new_numInterno
-    before insert on vendedores
-    for each row
-    declare nI int;
-    begin
-       if(:new.numInterno is null) then
-       select make_numInterno.nextval into nI
-       from dual;
-       :new.numInterno := nI;
-        end if;
-    end;
-/   
-
-
-create or replace trigger new_idCritica
-    before insert on criticas
-    for each row
-    declare idC int;
-    begin
-       if(:new.idCritica is null) then
-       select make_idCritica.nextval into idC
-       from dual;
-       :new.idCritica := idC;
-        end if;
-    end;
-/   
-
-
---Triggers definir constantes
-
-create or replace trigger set_salario
-    before insert on vendedores
-    for each row
-    begin  
-        if(:new.salario is null) then
-        :new.salario := 1200;
-        end if;
-    end;
-/
-
-create or replace trigger set_numVendas
-    before insert on vendedores
-    for each row
-    begin  
-        if(:new.numVendas is null) then
-        :new.numVendas := 0;
-        end if;
-    end;
-/
-
-create or replace trigger set_pontos
-    before insert on particulares
-    for each row
-    begin  
-        if(:new.pontos is null) then
-        :new.pontos := 0;
-        end if;
-    end;
-/
-
-create or replace trigger set_maxAlugueres
-    before insert on empresariais
-    for each row
-    begin  
-        if(:new.maxAlugueres is null) then
-        :new.maxAlugueres := 7;
-        end if;
-    end;
-/   
-
-create or replace trigger set_numAlugueres
-    before insert on empresariais
-    for each row
-    begin  
-        if(:new.numAlugueres is null) then
-        :new.numAlugueres := 0;
-        end if;
-    end;
-/
 
         
         

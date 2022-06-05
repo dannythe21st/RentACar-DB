@@ -224,7 +224,7 @@ insert into carros values ('12-TT-24', 2022, 'BMW', 'M3', 'LUXO', 'CASCAIS');
 insert into carros values ('12-VV-24', 2022, 'BMW', 'M4', 'LUXO', 'ESTORIL');
 insert into carros values ('10-FD-34', 2021, 'PORSCHE', '911 CARRERA S', 'LUXO', 'ESTORIL');
 insert into carros values ('10-BD-34', 2021, 'PORSCHE', '911 TURBO S', 'LUXO', 'BEJA');
-insert into carros values ('10-MN-34', 2021, 'PORSCHE', 'PANAMERA', 'LUXO', 'SINTRA');
+insert into carros values ('10-MN-33', 2021, 'PORSCHE', 'PANAMERA', 'LUXO', 'SINTRA');
 insert into carros values ('10-AS-34', 2021, 'PORSCHE', 'TAYCAN', 'LUXO', 'ESTORIL');
 insert into carros values ('10-WE-34', 2021, 'PORSCHE', '911 GT3', 'LUXO', 'ESTORIL');
 insert into carros values ('10-RR-34', 2021, 'PORSCHE', 'TARGA 4', 'LUXO', 'BEJA');
@@ -322,32 +322,32 @@ insert into carros values ('12-AC-35', 2018, 'DACIA', 'DUSTER STEPWAY', 'ECONOMI
 
 --TESTE DATAS
 select * from possui inner join alugueres using (referencia);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 01, '11-XG-57',1,null,'mediocre',5);
 insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '21-DZ-12',8,null,'EXCELENTE',9);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
-insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8,null,'bom',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '12-AY-35',5,null,'otimo',9);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 03, '18-HG-40',0,null,'bom',7);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '31-FF-35',0,null,'mediocre',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 05, '12-YO-24',9,null,'bom',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '12-YH-35',8,null,'EXCELENTE',8);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 07, '31-LX-35',7,null,'mediocre',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '12-PO-24',8,null,'bom',7);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '19-XB-87',5,null,'mediocre',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 03, '64-AG-35',8,null,'bom',6);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '12-AL-35',5,null,'bom',7);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 05, '64-XS-35',8,null,'EXCELENTE',9);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '14-AB-34',12,null,'otimo',8);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 09, '64-YY-35',8,null,'bom',7);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '19-XB-87',8,null,'mediocre',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 00, '12-TT-24',5,null,'bom',8);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 13, '12-AC-3',8,null,'EXCELENTE',10);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '12-PE-24',6,null,'bom',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '10-MN-33',4,null,'otimo',5);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 65, '12-AM-35',7,null,'bom',7);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '10-GA-34',8,null,'mediocre',4);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 34, '11-XB-87',1,null,'EXCELENTE',9);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '64-XC-89',8,null,'bom',6);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 21, '64-CZ-35',2,null,'otimo',8);
+insert into v_alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 21, '64-KJ-35',2,null,'otimo',7);
 
 
 
