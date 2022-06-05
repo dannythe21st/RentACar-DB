@@ -11,12 +11,6 @@ drop table criticas cascade constraints;
 
 drop table possui cascade constraints;
 
-drop sequence make_refer_aluguer;
-drop sequence make_numcliente;
-drop sequence make_numinterno;
-drop sequence make_idCritica;
-
-
 ---------------------------------CRIACAO TABELAS---------------------------------
 
 ---------------------------------PESSOAS---------------------------------
@@ -131,20 +125,7 @@ create table possui(
     foreign key (idCritica) references criticas(idCritica)
 );
 
----------------------------------VIEWS---------------------------------
-select * from vendedores;
-select * from clientes;
-select * from extras;
-insert into alugueres values (null, to_date('06.06.2022', 'DD.MM.YYYY'), to_date('15.06.2022', 'DD.MM.YYYY'), 3, '10-JK-31', 3);
-insert into alugueres values(null,to_date('29.11.2022', 'DD.MM.YYYY'), to_date('05.12.2022', 'DD.MM.YYYY'), 08, '11-XG-57',8);
-select * from possui;
-select * from alugueres where matricula = '11-XG-57';
-select * from criticas;
-select * from alugueres where matricula =  '11-XG-57';
-delete from alugueres where matricula =  '11-XG-57';
-
-delete from alugueres where matricula = '11-XG-57';
-
+---------------------------------VIEWS--------------------------------
 
         --------VIEW E TRIGGERS ALUGUERES--------
 
@@ -310,10 +291,6 @@ create or replace trigger del_v_clientes_particulares
 /
 
 ---------------------------------SEQUENCIAS---------------------------------
-drop sequence make_refer_aluguer;
-drop sequence make_numcliente;
-drop sequence make_numinterno;
-
 
 create sequence make_refer_aluguer
 start with 1000
@@ -520,15 +497,4 @@ create or replace trigger salary_bump
     end;
 /
 
-/*create or replace trigger maxAlugueres_bump
-
-
-/*/
-
-
-
-
-
-
-        
-        
+      
