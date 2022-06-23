@@ -1,3 +1,3 @@
-# CollegeWork
-Crippling depression powered by college
-:'D
+# RentACar-DB
+Final project for a Database class (2022).
+
